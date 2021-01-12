@@ -1,6 +1,6 @@
 import service.ManagerListSwitch;
-import service.ManagerStudent;
-import service.ManagerTeacher;
+import service.student.ManagerStudent;
+import service.teacher.ManagerTeacher;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class Main {
         ManagerTeacher managerTeacher = new ManagerTeacher();
         ManagerListSwitch managerListSwitch = new ManagerListSwitch();
 
-        System.out.println("---- QUÁN LÝ NHÀ TRƯỜNG ----");
+        System.out.println("---- QUẢN LÝ NHÀ TRƯỜNG ----");
         byte choice;
         do {
             managerListSwitch.listChoice();
@@ -105,10 +105,14 @@ public class Main {
                                managerTeacher.sortNumberIdTeacher();
                                break;
                            case 8:
+                               //Tính tổng tiền
+                               managerTeacher.totalSalaryTeacher();
+                               break;
+                           case 9:
                                //Đọc
                                managerTeacher.inputFile();
                                break;
-                           case 9:
+                           case 10:
                                //Ghi
                                managerTeacher.outputFile();
                                break;
@@ -122,4 +126,5 @@ public class Main {
         //Exit
         System.out.println("Thoát chương trình");
     }
+
 }

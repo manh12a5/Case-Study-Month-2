@@ -1,6 +1,6 @@
-package storage;
+package storage.teacher;
 
-import model.child.Teacher;
+import model.Teacher;
 
 import java.io.*;
 import java.util.List;

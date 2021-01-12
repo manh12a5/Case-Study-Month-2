@@ -1,28 +1,26 @@
-package service;
+package service.student;
 
-import model.child.Student;
-import storage.ReadAndWriteStudent;
+import model.Student;
+import storage.student.ReadAndWriteStudent;
 
 import java.util.*;
 
 public class ManagerStudent {
-
-    //Tạo đối tượng
     Scanner scanner = new Scanner(System.in);
-    Student student = new Student();
     private List<Student> arrStudents = new LinkedList<>();
-    ReadAndWriteStudent readAndWriteStudent = new ReadAndWriteStudent();
 
     //Danh sách phương thức
 
     //1. Thêm
     public void addNewStudent() {
+        Student student = new Student();
         student.inputInformation();
         arrStudents.add(student);
     }
 
     //2. Sửa
     public void editStudent() {
+        Student student = new Student();
         System.out.println("Nhập mã sinh viên cần sửa: ");
         int editNumberID = scanner.nextInt();
         arrStudents.set(editNumberID, student);
@@ -103,12 +101,14 @@ public class ManagerStudent {
 
     //9. Đọc
     public void inputFile() {
+        ReadAndWriteStudent readAndWriteStudent = new ReadAndWriteStudent();
         readAndWriteStudent.readFileStudent(arrStudents);
         displayAll();
     }
 
     //10. Ghi
     public void outputFile() {
+        ReadAndWriteStudent readAndWriteStudent = new ReadAndWriteStudent();
         readAndWriteStudent.writeFileStudent(arrStudents);
         System.out.println("Done");
     }

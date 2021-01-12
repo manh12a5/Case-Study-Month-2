@@ -1,4 +1,4 @@
-package model.child;
+package model;
 
 import model.parent.Person;
 
@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 public class Student extends Person implements Serializable {
 
     //Danh sách thuộc tính
-    private String numberID;
     private double avgNumber;
     private String email;
 
@@ -18,28 +17,18 @@ public class Student extends Person implements Serializable {
     public Student() {
     }
 
-    public Student(String numberID, double avgNumber, String email) {
-        this.numberID = numberID;
+    public Student(double avgNumber, String email) {
         this.avgNumber = avgNumber;
         this.email = email;
     }
 
-    public Student(String name, String gender, String birthday, String address, String numberID, double avgNumber, String email) {
-        super(name, gender, birthday, address);
-        this.numberID = numberID;
+    public Student(String numberID, String name, String gender, String birthday, String address, String numberPhone, double avgNumber, String email) {
+        super(numberID, name, gender, birthday, address, numberPhone);
         this.avgNumber = avgNumber;
         this.email = email;
     }
 
     //Getter and Setter
-    public String getNumberID() {
-        return numberID;
-    }
-
-    public void setNumberID(String numberID) {
-        this.numberID = numberID;
-    }
-
     public double getAvgNumber() {
         return avgNumber;
     }
@@ -56,19 +45,14 @@ public class Student extends Person implements Serializable {
         this.email = email;
     }
 
-    //Danh sách phương thức
+    //Danh sách phương thức nhập
 
     //Nhập thông tin học sinh
-
     @Override
     public void inputInformation() {
         super.inputInformation();
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
-        do {
-            System.out.println("Nhập mã sinh viên: ");
-            numberID = scanner.nextLine();
-        } while (!checkNumberID(numberID));
         do {
             System.out.println("Nhập điểm trung bình: ");
             avgNumber = scanner.nextDouble();
@@ -80,17 +64,6 @@ public class Student extends Person implements Serializable {
     }
 
     //Check thông tin
-
-    //Check mã sinh viên
-    public boolean checkNumberID(String numberID) {
-        Pattern pattern = Pattern.compile("^[A-Za-z0-9]+$");
-        if (!pattern.matcher(numberID).matches()) {
-            System.err.println("Mã sinh viên sai");
-            return false;
-        } else {
-            return true;
-        }
-    }
 
     //Check điểm trung bình
     public boolean checkAVGNumber(double avgNumber) {
@@ -113,11 +86,11 @@ public class Student extends Person implements Serializable {
         }
     }
 
+    //toString
     @Override
     public String toString() {
         return super.toString() +
                 "{ Student }" + "\n" +
-                "Mã sinh viên: " + numberID + " ' " +
                 "Điểm trung bình: " + avgNumber + " ' " +
                 "Email: " + email;
     }

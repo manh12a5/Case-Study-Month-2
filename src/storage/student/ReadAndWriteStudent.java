@@ -1,6 +1,6 @@
-package storage;
+package storage.student;
 
-import model.child.Student;
+import model.Student;
 
 import java.io.*;
 import java.util.List;

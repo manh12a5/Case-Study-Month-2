@@ -1,2 +1,5 @@
-package model;public interface IStaff {
+package model;
+
+public interface IStaff {
+    double getTotalSalary();
 }

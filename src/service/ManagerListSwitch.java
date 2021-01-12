@@ -36,8 +36,9 @@ public class ManagerListSwitch {
         System.out.println("5. Hiển thị giáo viên lương cao nhất");
         System.out.println("6. Tìm kiếm giáo viên");
         System.out.println("7. Sắp xếp giáo viên theo mã giáo viên");
-        System.out.println("8. Đọc (Open)");
-        System.out.println("9. Ghi (Save)");
+        System.out.println("8. Tổng tiền của một giáo viên");
+        System.out.println("9. Đọc (Open)");
+        System.out.println("10. Ghi (Save)");
         System.out.println("0. Trở về");
         System.out.print("Choice number: ");
     }

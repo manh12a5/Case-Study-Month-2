@@ -1,28 +1,26 @@
-package service;
+package service.teacher;
 
-import model.child.Teacher;
-import storage.ReadAndWriteTeacher;
+import model.Teacher;
+import storage.teacher.ReadAndWriteTeacher;
 
 import java.util.*;
 
 public class ManagerTeacher {
-
-    //Tạo đối tượng
     Scanner scanner = new Scanner(System.in);
-    Teacher teacher = new Teacher();
     private List<Teacher> arrTeachers = new ArrayList<>();
-    ReadAndWriteTeacher readAndWriteTeacher = new ReadAndWriteTeacher();
 
     //Danh sách phương thức
 
     //1. Thêm
     public void addNewTeacher() {
+        Teacher teacher = new Teacher();
         teacher.inputInformation();
         arrTeachers.add(teacher);
     }
 
     //2. Sửa
     public void editTeacher() {
+        Teacher teacher = new Teacher();
         System.out.println("Nhập mã giáo viên cần sửa: ");
         int editNumberID = scanner.nextInt();
         arrTeachers.set(editNumberID, teacher);
@@ -47,16 +45,16 @@ public class ManagerTeacher {
         Collections.sort(arrTeachers, new Comparator<Teacher>() {
             @Override
             public int compare(Teacher o1, Teacher o2) {
-                if (o1.totalSalary() > o2.totalSalary()) {
+                if (o1.getTotalSalary() > o2.getTotalSalary()) {
                     return 1;
-                } else if (o1.totalSalary() < o2.totalSalary()) {
+                } else if (o1.getTotalSalary() < o2.getTotalSalary()) {
                     return -1;
                 } else {
                     return 0;
                 }
             }
         });
-            System.out.println(arrTeachers.get(1));
+        System.out.println(arrTeachers.get(1));
     }
 
     //6. Tìm kiếm
@@ -86,15 +84,15 @@ public class ManagerTeacher {
         displayAll();
     }
 
-    //8. Tổng tiền của một giáo viên
-    public void totalSalaryOneTeacher() {
+    //8. Tổng tiền
+    public void totalSalaryTeacher() {
         byte count = 0;
         System.out.println("Nhập mã giáo viên cần tính tổng: ");
         String searchNumberID = scanner.nextLine();
         for (int i = 0; i < arrTeachers.size(); i++) {
             if (searchNumberID.equals(arrTeachers.get(i).getNumberID())) {
                 System.out.println("Giáo viên " + arrTeachers.get(i).getName()
-                        + " có tổng tiền: " + arrTeachers.get(i).totalSalary());
+                        + " có tổng tiền: " + arrTeachers.get(i).getTotalSalary());
                 count++;
             }
         }
@@ -103,14 +101,16 @@ public class ManagerTeacher {
         }
     }
 
-    //9.
+    //9. Đọc
     public void inputFile() {
+        ReadAndWriteTeacher readAndWriteTeacher = new ReadAndWriteTeacher();
         readAndWriteTeacher.readFileTeacher(arrTeachers);
         displayAll();
     }
 
-    //10.
+    //10. Ghi
     public void outputFile() {
+        ReadAndWriteTeacher readAndWriteTeacher = new ReadAndWriteTeacher();
         readAndWriteTeacher.writeFileTeacher(arrTeachers);
         System.out.println("Done");
     }
