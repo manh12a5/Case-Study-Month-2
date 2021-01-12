@@ -1,6 +1,6 @@
 package storage;
 
-import model.Teacher;
+import model.child.Teacher;
 
 import java.io.*;
 import java.util.List;
@@ -34,9 +34,6 @@ public class ReadAndWriteTeacher {
                 System.out.println("Lỗi: " + e);
             }
         }
-        for (int i = 0; i < arrTeacher.size(); i++) {
-            System.out.println(arrTeacher.get(i));
-        }
     }
 
     public void writeFileTeacher(List<Teacher> arrTeacher) {
@@ -63,7 +60,6 @@ public class ReadAndWriteTeacher {
                 System.out.println("Lỗi: " + e);
             }
         }
-        System.out.println("Done");
     }
 
 }

@@ -1,4 +1,6 @@
-package model;
+package model.child;
+
+import model.parent.Person;
 
 import java.io.Serializable;
 import java.util.Scanner;
@@ -8,7 +10,7 @@ import java.util.regex.Pattern;
 public class Student extends Person implements Serializable {
 
     //Danh sách thuộc tính
-    private int numberID;
+    private String numberID;
     private double avgNumber;
     private String email;
 
@@ -16,13 +18,13 @@ public class Student extends Person implements Serializable {
     public Student() {
     }
 
-    public Student(int numberID, double avgNumber, String email) {
+    public Student(String numberID, double avgNumber, String email) {
         this.numberID = numberID;
         this.avgNumber = avgNumber;
         this.email = email;
     }
 
-    public Student(String name, String gender, String birthday, String address, int numberID, double avgNumber, String email) {
+    public Student(String name, String gender, String birthday, String address, String numberID, double avgNumber, String email) {
         super(name, gender, birthday, address);
         this.numberID = numberID;
         this.avgNumber = avgNumber;
@@ -30,11 +32,11 @@ public class Student extends Person implements Serializable {
     }
 
     //Getter and Setter
-    public int getNumberID() {
+    public String getNumberID() {
         return numberID;
     }
 
-    public void setNumberID(int numberID) {
+    public void setNumberID(String numberID) {
         this.numberID = numberID;
     }
 
@@ -54,7 +56,6 @@ public class Student extends Person implements Serializable {
         this.email = email;
     }
 
-
     //Danh sách phương thức
 
     //Nhập thông tin học sinh
@@ -66,7 +67,7 @@ public class Student extends Person implements Serializable {
         Scanner scanner1 = new Scanner(System.in);
         do {
             System.out.println("Nhập mã sinh viên: ");
-            numberID = Integer.parseInt(scanner.nextLine());
+            numberID = scanner.nextLine();
         } while (!checkNumberID(numberID));
         do {
             System.out.println("Nhập điểm trung bình: ");
@@ -79,15 +80,19 @@ public class Student extends Person implements Serializable {
     }
 
     //Check thông tin
-    public boolean checkNumberID(int numberID) {
-        if (numberID < 0) {
-            System.out.println("Mã sinh viên phải lơn hơn 0");
+
+    //Check mã sinh viên
+    public boolean checkNumberID(String numberID) {
+        Pattern pattern = Pattern.compile("^[A-Za-z0-9]+$");
+        if (!pattern.matcher(numberID).matches()) {
+            System.err.println("Mã sinh viên sai");
             return false;
         } else {
             return true;
         }
     }
 
+    //Check điểm trung bình
     public boolean checkAVGNumber(double avgNumber) {
         if (avgNumber < 0 || avgNumber > 10) {
             System.err.println("Điểm chỉ trong khoảng (0-10)");
@@ -97,8 +102,9 @@ public class Student extends Person implements Serializable {
         }
     }
 
+    //Check Email
     public boolean checkEmail(String email) {
-        Pattern pattern = Pattern.compile("^\\w+[A-Za-z0-9]+@[A-Za-z]+.\\w{2,6}$");
+        Pattern pattern = Pattern.compile("^\\w+[A-Za-z0-9]+@\\w+.\\w{2,6}$");
         if (!pattern.matcher(email).matches()) {
             System.err.println("Nhập sai Email");
             return false;

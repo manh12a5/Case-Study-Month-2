@@ -1,6 +1,6 @@
 package service;
 
-import model.Student;
+import model.child.Student;
 import storage.ReadAndWriteStudent;
 
 import java.util.*;
@@ -15,43 +15,45 @@ public class ManagerStudent {
 
     //Danh sách phương thức
 
-    //Thêm
+    //1. Thêm
     public void addNewStudent() {
         student.inputInformation();
         arrStudents.add(student);
     }
 
-    //Sửa
+    //2. Sửa
     public void editStudent() {
         System.out.println("Nhập mã sinh viên cần sửa: ");
         int editNumberID = scanner.nextInt();
         arrStudents.set(editNumberID, student);
     }
 
-    //Xóa
+    //3. Xóa
     public void removeStudent() {
         System.out.println("Nhập mã sinh viên cần xóa: ");
-        int removeNumberID = scanner.nextInt();
+        String removeNumberID = scanner.nextLine();
         for (int i = 0; i < arrStudents.size(); i++) {
-            arrStudents.remove(arrStudents.get(i).getNumberID());
-            System.out.println("Đã xóa");
+            if (removeNumberID.equals(arrStudents.get(i).getNumberID())) {
+                arrStudents.remove(arrStudents.get(i));
+                System.out.println("Đã xóa");
+            }
         }
     }
 
-    //Hiển thị toàn bộ
+    //4. Hiển thị toàn bộ
     public void displayAll() {
         for (int i = 0; i < arrStudents.size(); i++) {
             System.out.println(arrStudents.get(i));
         }
     }
 
-    //Tìm kiếm
+    //5. Tìm kiếm
     public void searchStudent() {
         byte count = 0;
         System.out.println("Nhập mã sinh viên cần tìm: ");
-        int searchNumberID = scanner.nextInt();
+        String searchNumberID = scanner.nextLine();
         for (int i = 0; i < arrStudents.size(); i++) {
-            if (searchNumberID == arrStudents.get(i).getNumberID()) {
+            if (searchNumberID.equals(arrStudents.get(i).getNumberID())) {
                 System.out.println(arrStudents.get(i));
                 count++;
             }
@@ -61,23 +63,18 @@ public class ManagerStudent {
         }
     }
 
-    //Sắp xếp theo mã học sinh
+    //6. Sắp xếp theo mã học sinh
     public void sortStudent() {
         Collections.sort(arrStudents, new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
-                if (o1.getNumberID() > o2.getNumberID()) {
-                    return 1;
-                } else if (o1.getNumberID() < o2.getNumberID()) {
-                    return -1;
-                } else {
-                    return 0;
-                }
+                return o1.getNumberID().compareTo(o2.getNumberID());
             }
         });
+        displayAll();
     }
 
-    //Sắp xếp theo điểm học sinh
+    //7. Sắp xếp theo điểm học sinh
     public void sortAVGNumber() {
         Collections.sort(arrStudents, new Comparator<Student>() {
             @Override
@@ -91,9 +88,10 @@ public class ManagerStudent {
                 }
             }
         });
+        displayAll();
     }
 
-    //Check học bổng
+    //8. Check học bổng
     public void checkScholarship() {
         System.out.println("Sinh viên được học bổng");
         for (int i = 0; i < arrStudents.size(); i++) {
@@ -103,13 +101,16 @@ public class ManagerStudent {
         }
     }
 
-    //Đọc
+    //9. Đọc
     public void inputFile() {
         readAndWriteStudent.readFileStudent(arrStudents);
+        displayAll();
     }
 
-    //Ghi
+    //10. Ghi
     public void outputFile() {
         readAndWriteStudent.writeFileStudent(arrStudents);
+        System.out.println("Done");
     }
+
 }

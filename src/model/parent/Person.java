@@ -75,10 +75,8 @@ public class Person implements Serializable {
             System.out.println("Nhập ngày sinh (dd/MM/yyyy): ");
             birthday = scanner.nextLine();
         } while (!checkBirthday(birthday));
-        do {
-            System.out.println("Nhập địa chỉ: ");
-            address = scanner1.nextLine();
-        } while (address.length() < 0);
+        System.out.println("Nhập địa chỉ: ");
+        address = scanner1.nextLine();
     }
 
     //Check thông tin
@@ -92,6 +90,7 @@ public class Person implements Serializable {
         }
 
     }
+
     public boolean checkBirthday(String birthday) {
         Pattern pattern = Pattern.compile("\\d{1,2}[-|/]\\d{1,2}[-|/]\\d{4}$");
         if (!pattern.matcher(birthday).matches()) {
@@ -114,7 +113,7 @@ public class Person implements Serializable {
 
     @Override
     public String toString() {
-        return "{ Thông tin chung }" + "\n" +
+        return "----- { Thông tin chung } -----" + "\n" +
                 "Họ tên: " + name + " ' " +
                 "Giới tính: " + gender + " ' " +
                 "Ngày sinh: " + birthday + " ' " +

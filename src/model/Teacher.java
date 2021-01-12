@@ -1,4 +1,6 @@
-package model;
+package model.child;
+
+import model.parent.Person;
 
 import java.io.Serializable;
 import java.util.Scanner;
@@ -7,7 +9,7 @@ import java.util.regex.Pattern;
 public class Teacher extends Person implements Serializable {
 
     //Danh sách thuộc tính
-    private int numberID;
+    private String numberID;
     private String classTeach;
     private double salaryInOneHour;
     private double hourTeachInMonth;
@@ -16,14 +18,14 @@ public class Teacher extends Person implements Serializable {
     public Teacher() {
     }
 
-    public Teacher(int numberID, String classTeach, double salaryInOneHour, double hourTeachInMonth) {
+    public Teacher(String numberID, String classTeach, double salaryInOneHour, double hourTeachInMonth) {
         this.numberID = numberID;
         this.classTeach = classTeach;
         this.salaryInOneHour = salaryInOneHour;
         this.hourTeachInMonth = hourTeachInMonth;
     }
 
-    public Teacher(String name, String gender, String birthday, String address, int numberID, String classTeach, double salaryInOneHour, double hourTeachInMonth) {
+    public Teacher(String name, String gender, String birthday, String address, String numberID, String classTeach, double salaryInOneHour, double hourTeachInMonth) {
         super(name, gender, birthday, address);
         this.numberID = numberID;
         this.classTeach = classTeach;
@@ -32,11 +34,11 @@ public class Teacher extends Person implements Serializable {
     }
 
     //Getter and Setter
-    public int getNumberID() {
+    public String getNumberID() {
         return numberID;
     }
 
-    public void setNumberID(int numberID) {
+    public void setNumberID(String numberID) {
         this.numberID = numberID;
     }
 
@@ -72,7 +74,7 @@ public class Teacher extends Person implements Serializable {
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("Nhập mã giáo viên: ");
-            numberID = Integer.parseInt(scanner.nextLine());
+            numberID = scanner.nextLine();
         } while (!checkTeacherID(numberID));
         do {
             System.out.println("Nhập lớp dạy: ");
@@ -91,17 +93,19 @@ public class Teacher extends Person implements Serializable {
     //Check thông tin
 
     //Check ID
-    public boolean checkTeacherID(int numberID) {
-        if (numberID < 0) {
-            System.out.println("Mã giáo viên phải lơn hơn 0");
+    public boolean checkTeacherID(String numberID) {
+        Pattern pattern = Pattern.compile("^[A-Za-z0-9]+$");
+        if (!pattern.matcher(numberID).matches()) {
+            System.err.println("Mã giáo viên sai");
             return false;
+        } else {
+            return true;
         }
-        return true;
     }
 
     //Điều kiện nhập phòng dạy
     public boolean checkClassTeach(String classTeach) {
-        Pattern pattern = Pattern.compile("^\\w+\\d{4}[GgHhIiKkLlMm]+\\w*$");
+        Pattern pattern = Pattern.compile("^[Cc]+\\d{4}[GgHhIiKkLlMm]+\\d*$");
         if (!pattern.matcher(classTeach).matches()) {
             System.err.println("Nhập sai tên lớp");
             System.err.println("Tên lớp phải có giờ dạy (Giờ G, H, I, K, L, M)");
@@ -113,13 +117,16 @@ public class Teacher extends Person implements Serializable {
     }
 
     //Tính tổng tiền
-    public double totalSalaryTeach() {
+    public double totalSalary() {
         double totalSalary = 0.0;
         for (int i = 0; i < classTeach.length(); i++) {
-            if (classTeach.contains("G") || classTeach.contains("H")
-                    ||classTeach.contains("I") || classTeach.contains("K")) {
+            if (classTeach.contains("G") || classTeach.contains("g")
+                    || classTeach.contains("H") || classTeach.contains("h")
+                    || classTeach.contains("I") || classTeach.contains("i")
+                    || classTeach.contains("K") || classTeach.contains("k")) {
                 totalSalary = salaryInOneHour * hourTeachInMonth;
-            } else if (classTeach.contains("L") || classTeach.contains("M")) {
+            } else if (classTeach.contains("L") || classTeach.contains("l")
+                    || classTeach.contains("M") || classTeach.contains("m")) {
                 totalSalary = (salaryInOneHour + 200000) * hourTeachInMonth;
             }
         }
