@@ -1,19 +1,16 @@
 package storage;
 
-import model.Student;
+import model.Teacher;
 
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
 
-public class ReadAndWriteStudent {
-
+public class TeacherReadAndWrite {
     Scanner scanner = new Scanner(System.in);
 
-    //Danh sách phương thức
-
-    public void readFileStudent(List<Student> arrStudents) {
-        System.out.println("Nhập tên file để mở: ");
+    public void readFileTeacher(List<Teacher> arrTeacher) {
+        System.out.println("Nhập file muốn đọc: ");
         String fileName = scanner.nextLine();
 
         FileInputStream fileInputStream = null;
@@ -21,8 +18,8 @@ public class ReadAndWriteStudent {
         try {
             fileInputStream = new FileInputStream(fileName);
             objectInputStream = new ObjectInputStream(fileInputStream);
-            List<Student> arr = (List<Student>) objectInputStream.readObject();
-            arrStudents.addAll(arr);
+            List<Teacher> arr = (List<Teacher>) objectInputStream.readObject();
+            arrTeacher.addAll(arr);
         } catch (Exception e) {
             System.out.println("Lỗi: " + e);
         } finally {
@@ -39,7 +36,7 @@ public class ReadAndWriteStudent {
         }
     }
 
-    public void writeFileStudent(List<Student> arrStudents) {
+    public void writeFileTeacher(List<Teacher> arrTeacher) {
         System.out.println("Nhập tên file lưu: ");
         String fileName = scanner.nextLine();
 
@@ -48,7 +45,7 @@ public class ReadAndWriteStudent {
         try {
             fileOutputStream = new FileOutputStream(fileName);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(arrStudents);
+            objectOutputStream.writeObject(arrTeacher);
         } catch (Exception e) {
             System.out.println("Lỗi: " + e);
         } finally {

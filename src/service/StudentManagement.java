@@ -1,7 +1,7 @@
 package service;
 
 import model.Student;
-import storage.ReadAndWriteStudent;
+import storage.StudentReadAndWrite;
 
 import java.util.*;
 
@@ -101,14 +101,14 @@ public class StudentManagement {
 
     //9. Đọc
     public void inputFile() {
-        ReadAndWriteStudent readAndWriteStudent = new ReadAndWriteStudent();
+        StudentReadAndWrite readAndWriteStudent = new StudentReadAndWrite();
         readAndWriteStudent.readFileStudent(arrStudents);
         displayAll();
     }
 
     //10. Ghi
     public void outputFile() {
-        ReadAndWriteStudent readAndWriteStudent = new ReadAndWriteStudent();
+        StudentReadAndWrite readAndWriteStudent = new StudentReadAndWrite();
         readAndWriteStudent.writeFileStudent(arrStudents);
         System.out.println("Done");
     }

@@ -135,7 +135,7 @@ public class PPerson implements Serializable {
 
     //Check họ tên
     public boolean checkName(String name) {
-        Pattern pattern = Pattern.compile("^\\w+\\s*\\w*\\s*\\w*\\s*\\w*$", Pattern.UNICODE_CHARACTER_CLASS);
+        Pattern pattern = Pattern.compile("^\\w{2,}\\s*\\w*\\s*\\w*\\s*\\w*$", Pattern.UNICODE_CHARACTER_CLASS);
         if (!pattern.matcher(name).matches()) {
             System.err.println("Họ tên sai");
             return false;
@@ -170,7 +170,8 @@ public class PPerson implements Serializable {
     public boolean checkNumberPhone(String numberPhone) {
         Pattern pattern = Pattern.compile("^[0-9]{10,11}$");
         if (!pattern.matcher(numberPhone).matches()) {
-            System.err.println("Nhập sai sô điện thoại");
+            System.err.println("Nhập sai số điện thoại di động");
+            System.out.println("(Số điện thoại phải có 10-11 số)");
             return false;
         } else {
             return true;

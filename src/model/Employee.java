@@ -105,14 +105,13 @@ public class Employee extends PPerson implements Serializable, IStaff {
 
     //Check nghê nghiệp
     public boolean checkJob(String job) {
-        Pattern pattern = Pattern.compile("^\\w+$");
         for (int i = 0; i < job.length(); i++) {
-            if (!job.equalsIgnoreCase("Bảo Vệ")
-                    && !job.equalsIgnoreCase("Lao Công")
-                    && !job.equalsIgnoreCase("Y Tá")
-                    || !pattern.matcher(job).matches()) {
+            if (!job.equalsIgnoreCase("Bảo Vệ") && !job.equalsIgnoreCase("Bao Ve")
+                    && !job.equalsIgnoreCase("Lao Công") && !job.equalsIgnoreCase("Lao Cong")
+                    && !job.equalsIgnoreCase("Y Tá") && !job.equalsIgnoreCase("Y Ta") )
+            {
                 System.err.println("Nhập sai nghề nghiệp trong trường");
-                System.out.println("Nghề nghiệp trong trường chỉ có: Bảo vệ, Lao công, Y tá");
+                System.out.println("(Nhân viên trong trường chỉ có: Bảo vệ, Lao công, Y tá)");
                 return false;
             }
         }
@@ -121,7 +120,7 @@ public class Employee extends PPerson implements Serializable, IStaff {
 
     //Check lương cơ bản
     public boolean checkOriginalSalary(double originalSalary) {
-        if (originalSalary <= 3000000) {
+        if (originalSalary < 3000000) {
             System.err.println("Lương tối thiểu phải trên 3 triệu");
             return false;
         } else {

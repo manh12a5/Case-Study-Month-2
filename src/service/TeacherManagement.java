@@ -1,7 +1,7 @@
 package service;
 
 import model.Teacher;
-import storage.ReadAndWriteTeacher;
+import storage.TeacherReadAndWrite;
 
 import java.util.*;
 
@@ -103,14 +103,14 @@ public class TeacherManagement {
 
     //9. Đọc
     public void inputFile() {
-        ReadAndWriteTeacher readAndWriteTeacher = new ReadAndWriteTeacher();
+        TeacherReadAndWrite readAndWriteTeacher = new TeacherReadAndWrite();
         readAndWriteTeacher.readFileTeacher(arrTeachers);
         displayAll();
     }
 
     //10. Ghi
     public void outputFile() {
-        ReadAndWriteTeacher readAndWriteTeacher = new ReadAndWriteTeacher();
+        TeacherReadAndWrite readAndWriteTeacher = new TeacherReadAndWrite();
         readAndWriteTeacher.writeFileTeacher(arrTeachers);
         System.out.println("Done");
     }
