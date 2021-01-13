@@ -16,6 +16,9 @@ public class EmployeeListSwitch {
             System.out.println("2. Sửa nhân viên");
             System.out.println("3. Xóa nhân viên");
             System.out.println("4. Hiển thị toàn bộ nhân viên");
+            System.out.println("5. Tìm kiếm nhân viên");
+            System.out.println("6. Hiển thị nhân viên có lương thấp nhất");
+            System.out.println("----------");
             System.out.println("9. Đọc (Open)");
             System.out.println("10. Ghi (Save)");
             System.out.println("0. Trở về");
@@ -28,19 +31,39 @@ public class EmployeeListSwitch {
                     break;
                 case 2:
                     //Sửa
+                    employeeManagement.editEmpolyee();
                     break;
                 case 3:
                     //Xóa
+                    employeeManagement.removeEmployee();
                     break;
                 case 4:
                     //Display all
                     employeeManagement.displayAll();
                     break;
+                case 5:
+                    //Tìm kiếm
+                    employeeManagement.searchEmployee();
+                    break;
+                case 6:
+                    //Min Salary
+                    System.out.println("Update");
+                    break;
+                case 7:
+                    //
+                    System.out.println("Đang update");
+                    break;
+                case 8:
+                    //
+                    System.out.println("Coming soon");
+                    break;
                 case 9:
                     //Đọc
+                    employeeManagement.inputEmployee();
                     break;
                 case 10:
                     //Ghi
+                    employeeManagement.outputEmployee();
                     break;
             }
         } while (numberCase != 0);

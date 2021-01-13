@@ -18,8 +18,8 @@ public class TeacherReadAndWrite {
         try {
             fileInputStream = new FileInputStream(fileName);
             objectInputStream = new ObjectInputStream(fileInputStream);
-            List<Teacher> arr = (List<Teacher>) objectInputStream.readObject();
-            arrTeacher.addAll(arr);
+            List<Teacher> array = (List<Teacher>) objectInputStream.readObject();
+            arrTeacher.addAll(array);
         } catch (Exception e) {
             System.out.println("Lỗi: " + e);
         } finally {

@@ -4,12 +4,13 @@ import model.Employee;
 
 import java.io.*;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class EmployeeReadAndWrite {
     Scanner scanner = new Scanner(System.in);
 
-    public void readFileEmployee(List<Employee> arrEmployees) {
+    public void readFileEmployee(Map<String, Employee> arrEmployees) {
         System.out.println("Nhập tên file muốn mở: ");
         String fileName = scanner.nextLine();
 
@@ -18,8 +19,8 @@ public class EmployeeReadAndWrite {
         try {
             fileInputStream = new FileInputStream(fileName);
             objectInputStream = new ObjectInputStream(fileInputStream);
-            List<Employee> arr = (List<Employee>) objectInputStream.readObject();
-            arrEmployees.addAll(arr);
+            Map<String, Employee> array = (Map<String, Employee>) objectInputStream.readObject();
+            arrEmployees.putAll(array);
         } catch (Exception e) {
             System.out.println("Lỗi: " + e);
         } finally {
@@ -36,7 +37,7 @@ public class EmployeeReadAndWrite {
         }
     }
 
-    public void WriteFileEmployee(List<Employee> arrEmployees) {
+    public void writeFileEmployee(Map<String, Employee> arrEmployees) {
         System.out.println("Nhập tên file muôn lưu: ");
         String fileName = scanner.nextLine();
 

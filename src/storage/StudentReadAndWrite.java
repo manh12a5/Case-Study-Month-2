@@ -21,8 +21,8 @@ public class StudentReadAndWrite {
         try {
             fileInputStream = new FileInputStream(fileName);
             objectInputStream = new ObjectInputStream(fileInputStream);
-            List<Student> arr = (List<Student>) objectInputStream.readObject();
-            arrStudents.addAll(arr);
+            List<Student> array = (List<Student>) objectInputStream.readObject();
+            arrStudents.addAll(array);
         } catch (Exception e) {
             System.out.println("Lỗi: " + e);
         } finally {
