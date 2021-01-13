@@ -1,12 +1,10 @@
 package model;
 
-import model.parent.Person;
-
 import java.io.Serializable;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Teacher extends Person implements Serializable, IStaff {
+public class Teacher extends PPerson implements Serializable, IStaff {
 
     //Danh sách thuộc tính
     private String classTeach;

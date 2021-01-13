@@ -1,11 +1,11 @@
-package service.teacher;
+package service;
 
 import model.Teacher;
-import storage.teacher.ReadAndWriteTeacher;
+import storage.ReadAndWriteTeacher;
 
 import java.util.*;
 
-public class ManagerTeacher {
+public class TeacherManagement {
     Scanner scanner = new Scanner(System.in);
     private List<Teacher> arrTeachers = new ArrayList<>();
 

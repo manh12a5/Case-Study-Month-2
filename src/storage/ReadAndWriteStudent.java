@@ -1,4 +1,4 @@
-package storage.student;
+package storage;
 
 import model.Student;
 

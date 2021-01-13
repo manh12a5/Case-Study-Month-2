@@ -1,11 +1,11 @@
-package model.parent;
+package model;
 
 import java.io.Serializable;
 import java.util.Scanner;
 
 import java.util.regex.Pattern;
 
-public class Person implements Serializable {
+public class PPerson implements Serializable {
 
     //Danh sách thuộc tính
     private String numberID;
@@ -16,10 +16,10 @@ public class Person implements Serializable {
     private String numberPhone;
 
     //Constructor
-    public Person() {
+    public PPerson() {
     }
 
-    public Person(String numberID, String name, String gender, String birthday, String address, String numberPhone) {
+    public PPerson(String numberID, String name, String gender, String birthday, String address, String numberPhone) {
         this.numberID = numberID;
         this.name = name;
         this.gender = gender;

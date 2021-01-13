@@ -1,11 +1,11 @@
-package service.student;
+package service;
 
 import model.Student;
-import storage.student.ReadAndWriteStudent;
+import storage.ReadAndWriteStudent;
 
 import java.util.*;
 
-public class ManagerStudent {
+public class StudentManagement {
     Scanner scanner = new Scanner(System.in);
     private List<Student> arrStudents = new LinkedList<>();
 

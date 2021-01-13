@@ -1,13 +1,11 @@
 package model;
 
-import model.parent.Person;
-
 import java.io.Serializable;
 import java.util.Scanner;
 
 import java.util.regex.Pattern;
 
-public class Student extends Person implements Serializable {
+public class Student extends PPerson implements Serializable {
 
     //Danh sách thuộc tính
     private double avgNumber;
