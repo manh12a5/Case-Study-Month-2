@@ -83,10 +83,6 @@ public class EmployeeManagement {
     public double checkMinSalary() {
         double minSalary = 0.0;
         for (String key : arrEmployees.keySet()) {
-            minSalary = arrEmployees.get(key).getTotalSalary();
-            break;
-        }
-        for (String key : arrEmployees.keySet()) {
             if (minSalary > arrEmployees.get(key).getTotalSalary()) {
                 minSalary = arrEmployees.get(key).getTotalSalary();
             }
