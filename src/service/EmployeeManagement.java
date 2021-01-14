@@ -65,9 +65,18 @@ public class EmployeeManagement {
 
     //5. Tìm kiếm theo mã nhân viên
     public void searchEmployee() {
+        byte count = 0;
         System.out.println("Nhập mã nhân viên cần tìm: ");
         String searchNumberID = scanner.nextLine();
-        System.out.println(arrEmployees.get(searchNumberID));
+        for (String key : arrEmployees.keySet()) {
+            if (searchNumberID.equals(arrEmployees.get(key).getNumberID())) {
+                System.out.println(arrEmployees.get(searchNumberID));
+                count++;
+            }
+        }
+        if (count == 0) {
+            System.err.println("Không tìm thấy mã nhân viên");
+        }
     }
 
     //6. Hiển thị nhân viên có lương thấp nhất
