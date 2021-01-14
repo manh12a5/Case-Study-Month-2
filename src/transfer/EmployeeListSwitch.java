@@ -47,7 +47,7 @@ public class EmployeeListSwitch {
                     break;
                 case 6:
                     //Min Salary
-                    System.out.println("Update");
+                    employeeManagement.showEmployeeLowSalary();
                     break;
                 case 7:
                     //

@@ -80,9 +80,25 @@ public class EmployeeManagement {
     }
 
     //6. Hiển thị nhân viên có lương thấp nhất
-    public void checkMinSalary() {
+    public double checkMinSalary() {
+        double minSalary = 0.0;
         for (String key : arrEmployees.keySet()) {
+            minSalary = arrEmployees.get(key).getTotalSalary();
+            break;
+        }
+        for (String key : arrEmployees.keySet()) {
+            if (minSalary > arrEmployees.get(key).getTotalSalary()) {
+                minSalary = arrEmployees.get(key).getTotalSalary();
+            }
+        }
+        return minSalary;
+    }
 
+    public void showEmployeeLowSalary() {
+        for (String key : arrEmployees.keySet()) {
+            if (checkMinSalary() == arrEmployees.get(key).getTotalSalary()) {
+                System.out.println(arrEmployees.get(key));
+            }
         }
     }
 
