@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Employee extends PPerson implements Serializable, IStaff {
 
@@ -63,20 +64,17 @@ public class Employee extends PPerson implements Serializable, IStaff {
         this.forfeitSalary = forfeitSalary;
     }
 
-    //Điều kiện công việc
-    private boolean checkBooleanJob(String s, String s2) {
-        return job.equalsIgnoreCase(s) && !job.equalsIgnoreCase(s2);
-    }
-
     @Override
     public double getTotalSalary() {
         double totalSalary = 0.0;
-        if (checkBooleanJob("Bảo Vệ", "Bao Ve")) {
-            totalSalary = (originalSalary + 400000) + bonusSalary - forfeitSalary;
-        } else if (checkBooleanJob("Lao Công", "Lao Cong")) {
-            totalSalary = (originalSalary * 0.2) + bonusSalary - forfeitSalary;
-        } else if (checkBooleanJob("Y Tá", "Y Ta")) {
-            totalSalary = originalSalary + bonusSalary - forfeitSalary;
+        for (int i = 0; i < job.length(); i++) {
+            if (job.equalsIgnoreCase("Bảo Vệ") || job.equalsIgnoreCase("Bao Ve")) {
+                totalSalary = (originalSalary + 400000) + bonusSalary - forfeitSalary;
+            } else if (job.equalsIgnoreCase("Lao Công") || job.equalsIgnoreCase("Lao Cong")) {
+                totalSalary = (originalSalary * 0.2) + bonusSalary - forfeitSalary;
+            } else if (job.equalsIgnoreCase("Y Tá") || job.equalsIgnoreCase("Y Ta")) {
+                totalSalary = originalSalary + bonusSalary - forfeitSalary;
+            }
         }
         return totalSalary;
     }
@@ -110,9 +108,9 @@ public class Employee extends PPerson implements Serializable, IStaff {
     //Check nghê nghiệp
     public boolean checkJob(String job) {
         for (int i = 0; i < job.length(); i++) {
-            if (!checkBooleanJob("Bảo Vệ", "Bao Ve")
-                    && !checkBooleanJob("Lao Công", "Lao Cong")
-                    && !checkBooleanJob("Y Tá", "Y Ta"))
+            if (!job.equalsIgnoreCase("Bảo Vệ") && !job.equalsIgnoreCase("Bao Ve")
+                    && !job.equalsIgnoreCase("Lao Công") && !job.equalsIgnoreCase("Lao Cong")
+                    && !job.equalsIgnoreCase("Y Tá") && !job.equalsIgnoreCase("Y Ta") )
             {
                 System.err.println("Nhập sai nghề nghiệp trong trường");
                 System.out.println("(Nhân viên trong trường chỉ có: Bảo vệ, Lao công, Y tá)");
