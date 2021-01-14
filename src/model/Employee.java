@@ -132,8 +132,8 @@ public class Employee extends PPerson implements Serializable, IStaff {
     @Override
     public String toString() {
         return super.toString() +
-                "{ Employee }" +
-                "job='" + job + " ' " +
+                "{ Employee }" + "\n" +
+                "Nghề ngiệp: " + job + " ' " +
                 "Lương cơ bản: " + originalSalary + " ' " +
                 "Số tiền làm thêm: " + bonusSalary + " ' " +
                 "Số tiền phạt: " + forfeitSalary;

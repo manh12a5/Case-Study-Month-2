@@ -20,21 +20,35 @@ public class StudentManagement {
 
     //2. Sửa
     public void editStudent() {
-        Student student = new Student();
+        boolean checkID = false;
         System.out.println("Nhập mã sinh viên cần sửa: ");
-        int editNumberID = scanner.nextInt();
-        arrStudents.set(editNumberID, student);
+        String editNumberID = scanner.nextLine();
+        for (int i = 0; i < arrStudents.size(); i++) {
+            if (editNumberID.equals(arrStudents.get(i).getNumberID())) {
+                Student student = new Student();
+                arrStudents.set(i, student);
+                checkID = true;
+            }
+        }
+        if (!checkID) {
+            System.err.println("Không có mã sinh viên cần sửa");
+        }
     }
 
     //3. Xóa
     public void removeStudent() {
+        boolean checkID = false;
         System.out.println("Nhập mã sinh viên cần xóa: ");
         String removeNumberID = scanner.nextLine();
         for (int i = 0; i < arrStudents.size(); i++) {
             if (removeNumberID.equals(arrStudents.get(i).getNumberID())) {
                 arrStudents.remove(arrStudents.get(i));
                 System.out.println("Đã xóa");
+                checkID = true;
             }
+        }
+        if (!checkID) {
+            System.err.println("Không có mã sinh viên để xóa");
         }
     }
 

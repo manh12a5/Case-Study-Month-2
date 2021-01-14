@@ -20,17 +20,36 @@ public class TeacherManagement {
 
     //2. Sửa
     public void editTeacher() {
-        Teacher teacher = new Teacher();
+        boolean checkID = false;
         System.out.println("Nhập mã giáo viên cần sửa: ");
-        int editNumberID = scanner.nextInt();
-        arrTeachers.set(editNumberID, teacher);
+        String editNumberID = scanner.nextLine();
+        for (int i = 0; i < arrTeachers.size(); i++) {
+            if (editNumberID.equals(arrTeachers.get(i).getNumberID())) {
+                Teacher teacher = new Teacher();
+                teacher.inputInformation();
+                arrTeachers.set(i, teacher);
+                checkID = true;
+            }
+        }
+        if (!checkID) {
+            System.err.println("Không có mã giáo viên cần sửa");
+        }
     }
 
     //3. Xóa
     public void removeTeacher() {
+        boolean checkID = false;
         System.out.println("Nhập mã giáo viên cần xóa: ");
-        int removeNumberID = scanner.nextInt();
-        arrTeachers.remove(removeNumberID);
+        String removeNumberID = scanner.nextLine();
+        for (int i = 0; i < arrTeachers.size(); i++) {
+            if (removeNumberID.equals(arrTeachers.get(i).getNumberID())) {
+                arrTeachers.remove(i);
+                checkID = true;
+            }
+        }
+        if (!checkID) {
+            System.err.println("Không có mã giáo viên để xóa");
+        }
     }
 
     //4. Hiển thị toàn bộ
@@ -41,20 +60,22 @@ public class TeacherManagement {
     }
 
     //5. Hiển thị giáo viên có lương cao nhất
-    public void showTeacherHighSalary() {
-        Collections.sort(arrTeachers, new Comparator<Teacher>() {
-            @Override
-            public int compare(Teacher o1, Teacher o2) {
-                if (o1.getTotalSalary() > o2.getTotalSalary()) {
-                    return 1;
-                } else if (o1.getTotalSalary() < o2.getTotalSalary()) {
-                    return -1;
-                } else {
-                    return 0;
-                }
+    public double findHighSalary() {
+        double highSalary = arrTeachers.get(0).getTotalSalary();
+        for (int i = 0; i < arrTeachers.size(); i++) {
+            if (highSalary < arrTeachers.get(i).getTotalSalary()) {
+                highSalary = arrTeachers.get(i).getTotalSalary();
             }
-        });
-        System.out.println(arrTeachers.get(1));
+        }
+        return highSalary;
+    }
+
+    public void showTeacherHighSalary() {
+        for (int i = 0; i < arrTeachers.size(); i++) {
+            if (findHighSalary() == arrTeachers.get(i).getTotalSalary()) {
+                System.out.println(arrTeachers.get(i));
+            }
+        }
     }
 
     //6. Tìm kiếm

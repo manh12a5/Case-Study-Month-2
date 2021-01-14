@@ -22,26 +22,45 @@ public class EmployeeManagement {
 
     //2. Sửa
     public void editEmpolyee() {
-        Employee employee = new Employee();
+        boolean checkID = false;
         System.out.println("Nhập mã nhân viên cần sửa: ");
         String editNumberID = scanner.nextLine();
-        if (editNumberID.equals(employee.getNumberID())) {
-            arrEmployees.replace(editNumberID, employee);
-        } else {
+        for (String key: arrEmployees.keySet()) {
+            if (editNumberID.equals(arrEmployees.get(key).getNumberID())) {
+                Employee employee = new Employee();
+                employee.inputInformation();
+                arrEmployees.replace(editNumberID, employee);
+                checkID = true;
+            }
+        }
+        if (!checkID) {
             System.out.println("Không có mã nhân viên cần sửa");
         }
     }
 
     //3. Xóa
     public void removeEmployee() {
+        boolean checkID = false;
         System.out.println("Nhập mã nhân viên cần xóa: ");
         String removeNumberID = scanner.nextLine();
-        arrEmployees.remove(removeNumberID);
+        for (String key : arrEmployees.keySet()) {
+            if (removeNumberID.equals(arrEmployees.get(key).getNumberID())) {
+                arrEmployees.remove(removeNumberID);
+                System.out.println("Đã xóa");
+                checkID = true;
+            }
+        }
+        if (!checkID) {
+            System.out.println("Không có mã nhân viên để xóa");
+        }
     }
 
     //4. Hiển thị toàn bộ
     public void displayAll() {
-        System.out.println(arrEmployees.values().iterator());
+        for (String key : arrEmployees.keySet()) {
+            Employee value = arrEmployees.get(key);
+            System.out.println(value);
+        }
     }
 
     //5. Tìm kiếm theo mã nhân viên
@@ -52,6 +71,11 @@ public class EmployeeManagement {
     }
 
     //6. Hiển thị nhân viên có lương thấp nhất
+    public void checkMinSalary() {
+        for (String key : arrEmployees.keySet()) {
+
+        }
+    }
 
     //7.
 
