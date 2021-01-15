@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class EmployeeManagement implements Management {
+public class EmployeeManagement implements IManagement {
 
     Scanner scanner = new Scanner(System.in);
     Map<String, Employee> arrEmployees = new HashMap<>();

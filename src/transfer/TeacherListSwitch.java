@@ -4,7 +4,7 @@ import service.TeacherManagement;
 
 import java.util.Scanner;
 
-public class TeacherListSwitch implements ListSwitch {
+public class TeacherListSwitch implements IListSwitch {
     Scanner scanner = new Scanner(System.in);
 
     public void listManagement() {

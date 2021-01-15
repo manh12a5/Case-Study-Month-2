@@ -1,5 +1,5 @@
 package transfer;
 
-public interface ListSwitch {
+public interface IListSwitch {
     void listManagement();
 }

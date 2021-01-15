@@ -8,6 +8,7 @@ public class Main {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+
         EmployeeListSwitch employeeListSwitch = new EmployeeListSwitch();
         StudentListSwitch studentListSwitch = new StudentListSwitch();
         TeacherListSwitch teacherListSwitch = new TeacherListSwitch();
