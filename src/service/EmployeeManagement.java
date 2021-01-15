@@ -111,7 +111,7 @@ public class EmployeeManagement implements IManagement {
     }
 
     //7. Kiểm tra tuổi của nhân viên
-    public void checkAgeEmployee() {
+    public void showAgeEmployee() {
         for (String key : arrEmployees.keySet()) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             LocalDate localDate = LocalDate.now();

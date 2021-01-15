@@ -52,7 +52,7 @@ public class EmployeeListSwitch implements IListSwitch {
                     break;
                 case 7:
                     //Kiểm tra tuổi của nhân viên
-                    employeeManagement.checkAgeEmployee();
+                    employeeManagement.showAgeEmployee();
                     break;
                 case 8:
                     //Tổng tiền trả toàn bộ nhân viên trong trường
