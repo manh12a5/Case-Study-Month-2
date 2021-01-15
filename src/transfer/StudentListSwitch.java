@@ -4,10 +4,10 @@ import service.StudentManagement;
 
 import java.util.Scanner;
 
-public class StudentListSwitch {
+public class StudentListSwitch implements ListSwitch {
     Scanner scanner = new Scanner(System.in);
 
-    public void listStudent() {
+    public void listManagement() {
         StudentManagement studentManagement = new StudentManagement();
         byte numberCase;
         do {
@@ -28,15 +28,15 @@ public class StudentListSwitch {
             switch (numberCase) {
                 case 1:
                     //Thêm
-                    studentManagement.addNewStudent();
+                    studentManagement.addNewPerson();
                     break;
                 case 2:
                     //Sửa
-                    studentManagement.editStudent();
+                    studentManagement.editNewPerson();
                     break;
                 case 3:
                     //Xóa
-                    studentManagement.removeStudent();
+                    studentManagement.removePerson();
                     break;
                 case 4:
                     //Hiển thị toàn bộ
@@ -44,7 +44,7 @@ public class StudentListSwitch {
                     break;
                 case 5:
                     //Tìm kiếm
-                    studentManagement.searchStudent();
+                    studentManagement.searchPerson();
                     break;
                 case 6:
                     //Sắp xếp theo mã sinh viên
@@ -60,11 +60,11 @@ public class StudentListSwitch {
                     break;
                 case 9:
                     //Đọc (Open)
-                    studentManagement.inputFile();
+                    studentManagement.readFilePerson();
                     break;
                 case 10:
                     //Ghi (Save)
-                    studentManagement.outputFile();
+                    studentManagement.writeFilePerson();
                     break;
             }
         } while (numberCase != 0);

@@ -7,21 +7,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class EmployeeManagement {
+public class EmployeeManagement implements Manager {
+
     Scanner scanner = new Scanner(System.in);
     Map<String, Employee> arrEmployees = new HashMap<>();
 
     //Danh sách phương thức
 
     //1. Thêm
-    public void addNewEmployee() {
+    @Override
+    public void addNewPerson() {
         Employee employee = new Employee();
         employee.inputInformation();
         arrEmployees.put(employee.getNumberID(), employee);
     }
 
     //2. Sửa
-    public void editEmpolyee() {
+    @Override
+    public void editNewPerson() {
         boolean checkID = false;
         System.out.println("Nhập mã nhân viên cần sửa: ");
         String editNumberID = scanner.nextLine();
@@ -39,7 +42,8 @@ public class EmployeeManagement {
     }
 
     //3. Xóa
-    public void removeEmployee() {
+    @Override
+    public void removePerson() {
         boolean checkID = false;
         System.out.println("Nhập mã nhân viên cần xóa: ");
         String removeNumberID = scanner.nextLine();
@@ -56,6 +60,7 @@ public class EmployeeManagement {
     }
 
     //4. Hiển thị toàn bộ
+    @Override
     public void displayAll() {
         for (String key : arrEmployees.keySet()) {
             Employee value = arrEmployees.get(key);
@@ -64,7 +69,8 @@ public class EmployeeManagement {
     }
 
     //5. Tìm kiếm theo mã nhân viên
-    public void searchEmployee() {
+    @Override
+    public void searchPerson() {
         byte count = 0;
         System.out.println("Nhập mã nhân viên cần tìm: ");
         String searchNumberID = scanner.nextLine();
@@ -103,14 +109,16 @@ public class EmployeeManagement {
     //8.
 
     //9. Đọc
-    public void inputEmployee() {
+    @Override
+    public void readFilePerson() {
         EmployeeReadAndWrite employeeReadAndWrite = new EmployeeReadAndWrite();
         employeeReadAndWrite.readFileEmployee(arrEmployees);
         displayAll();
     }
 
     //10. Ghi
-    public void outputEmployee() {
+    @Override
+    public void writeFilePerson() {
         EmployeeReadAndWrite employeeReadAndWrite = new EmployeeReadAndWrite();
         employeeReadAndWrite.writeFileEmployee(arrEmployees);
         System.out.println("Done");

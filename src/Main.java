@@ -24,15 +24,15 @@ public class Main {
             switch (choice) {
                 case 1:
                     //Quản lý sinh viên
-                    studentListSwitch.listStudent();
+                    studentListSwitch.listManagement();
                     break;
                 case 2:
                     //Quản lý giáo viên
-                    teacherListSwitch.listTeacher();
+                    teacherListSwitch.listManagement();
                     break;
                 case 3:
                     //Quản lý nhân viên
-                    employeeListSwitch.listEmployee();
+                    employeeListSwitch.listManagement();
                     break;
             }
         } while (choice != 0);

@@ -4,10 +4,10 @@ import service.EmployeeManagement;
 
 import java.util.Scanner;
 
-public class EmployeeListSwitch {
+public class EmployeeListSwitch implements ListSwitch {
     Scanner scanner = new Scanner(System.in);
 
-    public void listEmployee() {
+    public void listManagement() {
         EmployeeManagement employeeManagement = new EmployeeManagement();
         byte numberCase;
         do {
@@ -27,15 +27,15 @@ public class EmployeeListSwitch {
             switch (numberCase) {
                 case 1:
                     //Thêm
-                    employeeManagement.addNewEmployee();
+                    employeeManagement.addNewPerson();
                     break;
                 case 2:
                     //Sửa
-                    employeeManagement.editEmpolyee();
+                    employeeManagement.editNewPerson();
                     break;
                 case 3:
                     //Xóa
-                    employeeManagement.removeEmployee();
+                    employeeManagement.removePerson();
                     break;
                 case 4:
                     //Display all
@@ -43,7 +43,7 @@ public class EmployeeListSwitch {
                     break;
                 case 5:
                     //Tìm kiếm
-                    employeeManagement.searchEmployee();
+                    employeeManagement.searchPerson();
                     break;
                 case 6:
                     //Min Salary
@@ -59,11 +59,11 @@ public class EmployeeListSwitch {
                     break;
                 case 9:
                     //Đọc
-                    employeeManagement.inputEmployee();
+                    employeeManagement.readFilePerson();
                     break;
                 case 10:
                     //Ghi
-                    employeeManagement.outputEmployee();
+                    employeeManagement.writeFilePerson();
                     break;
             }
         } while (numberCase != 0);

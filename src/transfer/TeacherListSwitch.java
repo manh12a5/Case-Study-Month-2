@@ -4,10 +4,10 @@ import service.TeacherManagement;
 
 import java.util.Scanner;
 
-public class TeacherListSwitch {
+public class TeacherListSwitch implements ListSwitch {
     Scanner scanner = new Scanner(System.in);
 
-    public void listTeacher() {
+    public void listManagement() {
         TeacherManagement teacherManagement = new TeacherManagement();
         byte numberCase;
         do {
@@ -28,15 +28,15 @@ public class TeacherListSwitch {
             switch (numberCase) {
                 case 1:
                     //Thêm
-                    teacherManagement.addNewTeacher();
+                    teacherManagement.addNewPerson();
                     break;
                 case 2:
                     //Sửa
-                    teacherManagement.editTeacher();
+                    teacherManagement.editNewPerson();
                     break;
                 case 3:
                     //Xóa
-                    teacherManagement.removeTeacher();
+                    teacherManagement.removePerson();
                     break;
                 case 4:
                     //Hiển thị toàn bộ
@@ -44,11 +44,11 @@ public class TeacherListSwitch {
                     break;
                 case 5:
                     //Hiện thị giáo viên lương cao nhất
-                    teacherManagement.showTeacherHighSalary();
+                    teacherManagement.searchPerson();
                     break;
                 case 6:
                     //Tìm kiếm
-                    teacherManagement.searchTeacher();
+                    teacherManagement.showTeacherHighSalary();
                     break;
                 case 7:
                     //Sắp xếp
@@ -60,11 +60,11 @@ public class TeacherListSwitch {
                     break;
                 case 9:
                     //Đọc
-                    teacherManagement.inputFile();
+                    teacherManagement.readFilePerson();
                     break;
                 case 10:
                     //Ghi
-                    teacherManagement.outputFile();
+                    teacherManagement.writeFilePerson();
                     break;
             }
         } while (numberCase != 0);

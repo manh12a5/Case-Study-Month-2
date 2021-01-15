@@ -5,21 +5,24 @@ import storage.StudentReadAndWrite;
 
 import java.util.*;
 
-public class StudentManagement {
+public class StudentManagement implements Manager {
+
     Scanner scanner = new Scanner(System.in);
     private List<Student> arrStudents = new LinkedList<>();
 
     //Danh sách phương thức
 
     //1. Thêm
-    public void addNewStudent() {
+    @Override
+    public void addNewPerson() {
         Student student = new Student();
         student.inputInformation();
         arrStudents.add(student);
     }
 
     //2. Sửa
-    public void editStudent() {
+    @Override
+    public void editNewPerson() {
         boolean checkID = false;
         System.out.println("Nhập mã sinh viên cần sửa: ");
         String editNumberID = scanner.nextLine();
@@ -36,7 +39,8 @@ public class StudentManagement {
     }
 
     //3. Xóa
-    public void removeStudent() {
+    @Override
+    public void removePerson() {
         boolean checkID = false;
         System.out.println("Nhập mã sinh viên cần xóa: ");
         String removeNumberID = scanner.nextLine();
@@ -53,6 +57,7 @@ public class StudentManagement {
     }
 
     //4. Hiển thị toàn bộ
+    @Override
     public void displayAll() {
         for (int i = 0; i < arrStudents.size(); i++) {
             System.out.println(arrStudents.get(i));
@@ -60,7 +65,8 @@ public class StudentManagement {
     }
 
     //5. Tìm kiếm
-    public void searchStudent() {
+    @Override
+    public void searchPerson() {
         byte count = 0;
         System.out.println("Nhập mã sinh viên cần tìm: ");
         String searchNumberID = scanner.nextLine();
@@ -114,14 +120,16 @@ public class StudentManagement {
     }
 
     //9. Đọc
-    public void inputFile() {
+    @Override
+    public void readFilePerson() {
         StudentReadAndWrite readAndWriteStudent = new StudentReadAndWrite();
         readAndWriteStudent.readFileStudent(arrStudents);
         displayAll();
     }
 
     //10. Ghi
-    public void outputFile() {
+    @Override
+    public void writeFilePerson() {
         StudentReadAndWrite readAndWriteStudent = new StudentReadAndWrite();
         readAndWriteStudent.writeFileStudent(arrStudents);
         System.out.println("Done");

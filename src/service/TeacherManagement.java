@@ -5,21 +5,24 @@ import storage.TeacherReadAndWrite;
 
 import java.util.*;
 
-public class TeacherManagement {
+public class TeacherManagement implements Manager {
+
     Scanner scanner = new Scanner(System.in);
     private List<Teacher> arrTeachers = new ArrayList<>();
 
     //Danh sách phương thức
 
     //1. Thêm
-    public void addNewTeacher() {
+    @Override
+    public void addNewPerson() {
         Teacher teacher = new Teacher();
         teacher.inputInformation();
         arrTeachers.add(teacher);
     }
 
     //2. Sửa
-    public void editTeacher() {
+    @Override
+    public void editNewPerson() {
         boolean checkID = false;
         System.out.println("Nhập mã giáo viên cần sửa: ");
         String editNumberID = scanner.nextLine();
@@ -37,7 +40,8 @@ public class TeacherManagement {
     }
 
     //3. Xóa
-    public void removeTeacher() {
+    @Override
+    public void removePerson() {
         boolean checkID = false;
         System.out.println("Nhập mã giáo viên cần xóa: ");
         String removeNumberID = scanner.nextLine();
@@ -53,13 +57,31 @@ public class TeacherManagement {
     }
 
     //4. Hiển thị toàn bộ
+    @Override
     public void displayAll() {
         for (int i = 0; i < arrTeachers.size(); i++) {
             System.out.println(arrTeachers.get(i));
         }
     }
 
-    //5. Hiển thị giáo viên có lương cao nhất
+    //5. Tìm kiếm
+    @Override
+    public void searchPerson() {
+        byte count = 0;
+        System.out.println("Nhập mã giáo viên cần tìm: ");
+        String searchNumberID = scanner.nextLine();
+        for (int i = 0; i < arrTeachers.size(); i++) {
+            if (searchNumberID.equals(arrTeachers.get(i).getNumberID())) {
+                System.out.println(arrTeachers.get(i));
+                count++;
+            }
+        }
+        if (count == 0) {
+            System.err.println("Không tìm thấy");
+        }
+    }
+
+    //6. Hiển thị giáo viên có lương cao nhất
     public double findHighSalary() {
         double highSalary = arrTeachers.get(0).getTotalSalary();
         for (int i = 0; i < arrTeachers.size(); i++) {
@@ -75,22 +97,6 @@ public class TeacherManagement {
             if (findHighSalary() == arrTeachers.get(i).getTotalSalary()) {
                 System.out.println(arrTeachers.get(i));
             }
-        }
-    }
-
-    //6. Tìm kiếm
-    public void searchTeacher() {
-        byte count = 0;
-        System.out.println("Nhập mã giáo viên cần tìm: ");
-        String searchNumberID = scanner.nextLine();
-        for (int i = 0; i < arrTeachers.size(); i++) {
-            if (searchNumberID.equals(arrTeachers.get(i).getNumberID())) {
-                System.out.println(arrTeachers.get(i));
-                count++;
-            }
-        }
-        if (count == 0) {
-            System.err.println("Không tìm thấy");
         }
     }
 
@@ -123,14 +129,16 @@ public class TeacherManagement {
     }
 
     //9. Đọc
-    public void inputFile() {
+    @Override
+    public void readFilePerson() {
         TeacherReadAndWrite readAndWriteTeacher = new TeacherReadAndWrite();
         readAndWriteTeacher.readFileTeacher(arrTeachers);
         displayAll();
     }
 
     //10. Ghi
-    public void outputFile() {
+    @Override
+    public void writeFilePerson() {
         TeacherReadAndWrite readAndWriteTeacher = new TeacherReadAndWrite();
         readAndWriteTeacher.writeFileTeacher(arrTeachers);
         System.out.println("Done");
