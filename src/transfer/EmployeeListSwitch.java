@@ -27,11 +27,11 @@ public class EmployeeListSwitch implements ListSwitch {
             switch (numberCase) {
                 case 1:
                     //Thêm
-                    employeeManagement.addNewPerson();
+                    employeeManagement.addPerson();
                     break;
                 case 2:
                     //Sửa
-                    employeeManagement.editNewPerson();
+                    employeeManagement.editPerson();
                     break;
                 case 3:
                     //Xóa

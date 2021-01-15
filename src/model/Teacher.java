@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Teacher extends PPerson implements Serializable, IStaff {
+public class Teacher extends PPerson implements Serializable, IPerson {
 
     //Danh sách thuộc tính
     private String classTeach;

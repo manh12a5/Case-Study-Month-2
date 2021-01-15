@@ -1,11 +1,11 @@
 package service;
 
-public interface Manager {
+public interface Management {
 
     //1.
-    void addNewPerson();
+    void addPerson();
     //2.
-    void editNewPerson();
+    void editPerson();
     //3.
     void removePerson();
     //4.

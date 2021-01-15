@@ -5,7 +5,7 @@ import storage.StudentReadAndWrite;
 
 import java.util.*;
 
-public class StudentManagement implements Manager {
+public class StudentManagement implements Management {
 
     Scanner scanner = new Scanner(System.in);
     private List<Student> arrStudents = new LinkedList<>();
@@ -14,7 +14,7 @@ public class StudentManagement implements Manager {
 
     //1. Thêm
     @Override
-    public void addNewPerson() {
+    public void addPerson() {
         Student student = new Student();
         student.inputInformation();
         arrStudents.add(student);
@@ -22,7 +22,7 @@ public class StudentManagement implements Manager {
 
     //2. Sửa
     @Override
-    public void editNewPerson() {
+    public void editPerson() {
         boolean checkID = false;
         System.out.println("Nhập mã sinh viên cần sửa: ");
         String editNumberID = scanner.nextLine();

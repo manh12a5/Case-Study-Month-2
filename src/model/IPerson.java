@@ -1,5 +1,5 @@
 package model;
 
-public interface IStaff {
+public interface IPerson {
     double getTotalSalary();
 }

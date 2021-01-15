@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class EmployeeManagement implements Manager {
+public class EmployeeManagement implements Management {
 
     Scanner scanner = new Scanner(System.in);
     Map<String, Employee> arrEmployees = new HashMap<>();
@@ -16,7 +16,7 @@ public class EmployeeManagement implements Manager {
 
     //1. Thêm
     @Override
-    public void addNewPerson() {
+    public void addPerson() {
         Employee employee = new Employee();
         employee.inputInformation();
         arrEmployees.put(employee.getNumberID(), employee);
@@ -24,7 +24,7 @@ public class EmployeeManagement implements Manager {
 
     //2. Sửa
     @Override
-    public void editNewPerson() {
+    public void editPerson() {
         boolean checkID = false;
         System.out.println("Nhập mã nhân viên cần sửa: ");
         String editNumberID = scanner.nextLine();

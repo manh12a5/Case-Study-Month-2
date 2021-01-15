@@ -28,11 +28,11 @@ public class StudentListSwitch implements ListSwitch {
             switch (numberCase) {
                 case 1:
                     //Thêm
-                    studentManagement.addNewPerson();
+                    studentManagement.addPerson();
                     break;
                 case 2:
                     //Sửa
-                    studentManagement.editNewPerson();
+                    studentManagement.editPerson();
                     break;
                 case 3:
                     //Xóa
