@@ -30,7 +30,7 @@ public class EmployeeManagement implements IManagement {
         boolean checkID = false;
         System.out.println("Nhập mã nhân viên cần sửa: ");
         String editNumberID = scanner.nextLine();
-        for (String key: arrEmployees.keySet()) {
+        for (String key : arrEmployees.keySet()) {
             if (editNumberID.equals(arrEmployees.get(key).getNumberID())) {
                 Employee employee = new Employee();
                 employee.inputInformation();
@@ -112,17 +112,13 @@ public class EmployeeManagement implements IManagement {
 
     //7. Kiểm tra tuổi của nhân viên
     public void checkAgeEmployee() {
-        System.out.println("Nhập mã nhân viên cần kiểm tra: ");
-        String checkNumberID = scanner.nextLine();
         for (String key : arrEmployees.keySet()) {
-            if (checkNumberID.equals(arrEmployees.get(key).getNumberID())) {
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                LocalDate localDate = LocalDate.now();
-                LocalDate birthday = LocalDate.parse(arrEmployees.get(key).getBirthday(), formatter);
-                int age = localDate.getYear() - birthday.getYear();
-                System.out.println("Tuổi nhân viên '" + arrEmployees.get(key).getName()
-                        + "' có mã nhân viên '" + arrEmployees.get(key).getNumberID() + "' là: " + age);
-            }
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate localDate = LocalDate.now();
+            LocalDate birthday = LocalDate.parse(arrEmployees.get(key).getBirthday(), formatter);
+            int age = localDate.getYear() - birthday.getYear();
+            System.out.println("Tuổi nhân viên '" + arrEmployees.get(key).getName()
+                    + "' có mã nhân viên '" + arrEmployees.get(key).getNumberID() + "' là: " + age);
         }
     }
 
@@ -132,6 +128,7 @@ public class EmployeeManagement implements IManagement {
         for (String key : arrEmployees.keySet()) {
             total += arrEmployees.get(key).getTotalSalary();
         }
+        System.out.println("Tông tiền phải trả cho nhân viên là: " + total);
     }
 
     //9. Đọc
