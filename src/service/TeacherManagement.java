@@ -101,7 +101,7 @@ public class TeacherManagement implements IManagement {
     }
 
     //7. Sắp xếp giáo viên theo mã giáo viên
-    public void sortNumberIdTeacher() {
+    public void sortNumberID() {
         Collections.sort(arrTeachers, new Comparator<>() {
             @Override
             public int compare(Teacher o1, Teacher o2) {

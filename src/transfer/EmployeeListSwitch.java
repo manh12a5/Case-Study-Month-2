@@ -18,7 +18,8 @@ public class EmployeeListSwitch implements IListSwitch {
             System.out.println("4. Hiển thị toàn bộ nhân viên");
             System.out.println("5. Tìm kiếm nhân viên");
             System.out.println("6. Hiển thị nhân viên có lương thấp nhất");
-            System.out.println("----------");
+            System.out.println("7. Hiển thị tuổi của nhân viên");
+            System.out.println("8. Tổng tiền trả toàn bộ nhân viên trong trường");
             System.out.println("9. Đọc (Open)");
             System.out.println("10. Ghi (Save)");
             System.out.println("0. Trở về");
@@ -50,12 +51,12 @@ public class EmployeeListSwitch implements IListSwitch {
                     employeeManagement.showEmployeeLowSalary();
                     break;
                 case 7:
-                    //
-                    System.out.println("Đang update");
+                    //Kiểm tra tuổi của nhân viên
+                    employeeManagement.checkAgeEmployee();
                     break;
                 case 8:
-                    //
-                    System.out.println("Coming soon");
+                    //Tổng tiền trả toàn bộ nhân viên trong trường
+                    employeeManagement.totalSalaryAllEmployee();
                     break;
                 case 9:
                     //Đọc

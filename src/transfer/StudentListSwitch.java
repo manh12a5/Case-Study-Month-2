@@ -48,7 +48,7 @@ public class StudentListSwitch implements IListSwitch {
                     break;
                 case 6:
                     //Sắp xếp theo mã sinh viên
-                    studentManagement.sortStudent();
+                    studentManagement.sortNumberID();
                     break;
                 case 7:
                     //Sắp xếp theo điểm trung bình
@@ -56,7 +56,7 @@ public class StudentListSwitch implements IListSwitch {
                     break;
                 case 8:
                     //Hiển thị nhưng học sinh được học bổng
-                    studentManagement.checkScholarship();
+                    studentManagement.showStudentScholarship();
                     break;
                 case 9:
                     //Đọc (Open)

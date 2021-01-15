@@ -82,7 +82,7 @@ public class StudentManagement implements IManagement {
     }
 
     //6. Sắp xếp theo mã học sinh
-    public void sortStudent() {
+    public void sortNumberID() {
         Collections.sort(arrStudents, new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
@@ -110,7 +110,7 @@ public class StudentManagement implements IManagement {
     }
 
     //8. Check học bổng
-    public void checkScholarship() {
+    public void showStudentScholarship() {
         System.out.println("Sinh viên được học bổng");
         for (int i = 0; i < arrStudents.size(); i++) {
             if (arrStudents.get(i).getAvgNumber() >= 8.0) {

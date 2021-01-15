@@ -3,6 +3,8 @@ package service;
 import model.Employee;
 import storage.EmployeeReadAndWrite;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,7 +12,7 @@ import java.util.Scanner;
 public class EmployeeManagement implements IManagement {
 
     Scanner scanner = new Scanner(System.in);
-    Map<String, Employee> arrEmployees = new HashMap<>();
+    private Map<String, Employee> arrEmployees = new HashMap<>();
 
     //Danh sách phương thức
 
@@ -89,6 +91,10 @@ public class EmployeeManagement implements IManagement {
     public double checkMinSalary() {
         double minSalary = 0.0;
         for (String key : arrEmployees.keySet()) {
+            minSalary = arrEmployees.get(key).getTotalSalary();
+            break;
+        }
+        for (String key : arrEmployees.keySet()) {
             if (minSalary > arrEmployees.get(key).getTotalSalary()) {
                 minSalary = arrEmployees.get(key).getTotalSalary();
             }
@@ -104,9 +110,29 @@ public class EmployeeManagement implements IManagement {
         }
     }
 
-    //7.
+    //7. Kiểm tra tuổi của nhân viên
+    public void checkAgeEmployee() {
+        System.out.println("Nhập mã nhân viên cần kiểm tra: ");
+        String checkNumberID = scanner.nextLine();
+        for (String key : arrEmployees.keySet()) {
+            if (checkNumberID.equals(arrEmployees.get(key).getNumberID())) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                LocalDate localDate = LocalDate.now();
+                LocalDate birthday = LocalDate.parse(arrEmployees.get(key).getBirthday(), formatter);
+                int age = localDate.getYear() - birthday.getYear();
+                System.out.println("Tuổi nhân viên '" + arrEmployees.get(key).getName()
+                        + "' có mã nhân viên '" + arrEmployees.get(key).getNumberID() + "' là: " + age);
+            }
+        }
+    }
 
-    //8.
+    //8. Tổng tiền phải trả cho toàn bộ nhân viên
+    public void totalSalaryAllEmployee() {
+        double total = 0.0;
+        for (String key : arrEmployees.keySet()) {
+            total += arrEmployees.get(key).getTotalSalary();
+        }
+    }
 
     //9. Đọc
     @Override

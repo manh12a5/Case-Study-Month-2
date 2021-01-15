@@ -146,9 +146,10 @@ public class PPerson implements Serializable {
 
     //Check ngày sinh
     public boolean checkBirthday(String birthday) {
-        Pattern pattern = Pattern.compile("\\d{1,2}[-|/]\\d{1,2}[-|/]\\d{4}$");
+        Pattern pattern = Pattern.compile("\\d{2}/\\d{2}/\\d{4}$");
         if (!pattern.matcher(birthday).matches()) {
             System.err.println("Nhập sai ngày sinh");
+            System.out.println("(Ngày sinh đúng: 01/01/2021)");
             return false;
         } else {
             return true;

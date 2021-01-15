@@ -43,16 +43,16 @@ public class TeacherListSwitch implements IListSwitch {
                     teacherManagement.displayAll();
                     break;
                 case 5:
-                    //Hiện thị giáo viên lương cao nhất
+                    //Tìm kiếm
                     teacherManagement.searchPerson();
                     break;
                 case 6:
-                    //Tìm kiếm
+                    //Hiển thị giáo viên lương cao nhất
                     teacherManagement.showTeacherHighSalary();
                     break;
                 case 7:
                     //Sắp xếp
-                    teacherManagement.sortNumberIdTeacher();
+                    teacherManagement.sortNumberID();
                     break;
                 case 8:
                     //Tính tổng tiền
