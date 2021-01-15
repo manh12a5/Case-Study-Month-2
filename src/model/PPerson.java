@@ -84,27 +84,27 @@ public class PPerson implements Serializable {
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
         do {
-            System.out.println("Nhập mã ID: ");
+            System.out.print("Nhập mã ID: ");
             numberID = scanner.nextLine();
         } while (!checkNumberID(numberID));
         do {
-            System.out.println("Nhập họ tên: ");
+            System.out.print("Nhập họ tên: ");
             name = scanner1.nextLine();
         } while (!checkName(name));
         do {
-            System.out.println("Nhập giới tính (Nam/Nữ): ");
+            System.out.print("Nhập giới tính (Nam/Nữ): ");
             gender = scanner.nextLine();
         } while (!checkGender(gender));
         do {
-            System.out.println("Nhập ngày sinh (dd/MM/yyyy): ");
+            System.out.print("Nhập ngày sinh (dd/MM/yyyy): ");
             birthday = scanner1.nextLine();
         } while (!checkBirthday(birthday));
         do {
-            System.out.println("Nhập địa chỉ: ");
+            System.out.print("Nhập địa chỉ: ");
             address = scanner.nextLine();
         } while (!checkAddress(address));
         do {
-            System.out.println("Nhập số điện thoại: ");
+            System.out.print("Nhập số điện thoại: ");
             numberPhone = scanner1.nextLine();
         } while (!checkNumberPhone(numberPhone));
     }

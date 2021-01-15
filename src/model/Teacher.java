@@ -78,15 +78,15 @@ public class Teacher extends PPerson implements Serializable, IPerson {
         super.inputInformation();
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.println("Nhập lớp dạy: ");
+            System.out.print("Nhập lớp dạy: ");
             classTeach = scanner.nextLine();
         } while (!checkClassTeach(classTeach));
         do {
-            System.out.println("Nhập lương dạy trong 1 giờ: ");
+            System.out.print("Nhập lương dạy trong 1 giờ: ");
             salaryInOneHour = Double.parseDouble(scanner.nextLine());
         } while (salaryInOneHour < 0.0);
         do {
-            System.out.println("Nhập số giờ dạy trong tháng: ");
+            System.out.print("Nhập số giờ dạy trong tháng: ");
             hourTeachInMonth = scanner.nextDouble();
         } while (hourTeachInMonth < 0.0);
     }

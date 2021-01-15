@@ -24,7 +24,7 @@ public class StudentManagement implements IManagement {
     @Override
     public void editPerson() {
         boolean checkID = false;
-        System.out.println("Nhập mã sinh viên cần sửa: ");
+        System.out.print("Nhập mã sinh viên cần sửa: ");
         String editNumberID = scanner.nextLine();
         for (int i = 0; i < arrStudents.size(); i++) {
             if (editNumberID.equals(arrStudents.get(i).getNumberID())) {
@@ -42,7 +42,7 @@ public class StudentManagement implements IManagement {
     @Override
     public void removePerson() {
         boolean checkID = false;
-        System.out.println("Nhập mã sinh viên cần xóa: ");
+        System.out.print("Nhập mã sinh viên cần xóa: ");
         String removeNumberID = scanner.nextLine();
         for (int i = 0; i < arrStudents.size(); i++) {
             if (removeNumberID.equals(arrStudents.get(i).getNumberID())) {
@@ -68,7 +68,7 @@ public class StudentManagement implements IManagement {
     @Override
     public void searchPerson() {
         byte count = 0;
-        System.out.println("Nhập mã sinh viên cần tìm: ");
+        System.out.print("Nhập mã sinh viên cần tìm: ");
         String searchNumberID = scanner.nextLine();
         for (int i = 0; i < arrStudents.size(); i++) {
             if (searchNumberID.equals(arrStudents.get(i).getNumberID())) {

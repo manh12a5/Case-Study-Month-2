@@ -11,20 +11,21 @@ public class TeacherListSwitch implements IListSwitch {
         TeacherManagement teacherManagement = new TeacherManagement();
         byte numberCase;
         do {
-            System.out.println("----------");
-            System.out.println("1. Thêm giáo viên");
-            System.out.println("2. Sửa giáo viên");
-            System.out.println("3. Xóa giáo viên");
-            System.out.println("4. Hiển thị toàn bộ giáo viên");
-            System.out.println("5. Hiển thị giáo viên lương cao nhất");
-            System.out.println("6. Tìm kiếm giáo viên");
-            System.out.println("7. Sắp xếp giáo viên theo mã giáo viên");
-            System.out.println("8. Tổng tiền của một giáo viên");
-            System.out.println("9. Đọc (Open)");
-            System.out.println("10. Ghi (Save)");
-            System.out.println("0. Trở về");
+            System.out.println("|------------------------------------------------|");
+            System.out.println("1. Thêm giáo viên -------------------------------|");
+            System.out.println("2. Sửa giáo viên --------------------------------|");
+            System.out.println("3. Xóa giáo viên --------------------------------|");
+            System.out.println("4. Hiển thị toàn bộ giáo viên -------------------|");
+            System.out.println("5. Hiển thị giáo viên lương cao nhất ------------|");
+            System.out.println("6. Tìm kiếm giáo viên ---------------------------|");
+            System.out.println("7. Sắp xếp giáo viên theo mã giáo viên ----------|");
+            System.out.println("8. Tổng tiền của một giáo viên ------------------|");
+            System.out.println("9. Đọc (Open) -----------------------------------|");
+            System.out.println("10. Ghi (Save) ----------------------------------|");
+            System.out.println("0. Trở về ---------------------------------------|");
             System.out.print("Choice number: ");
             numberCase = scanner.nextByte();
+            System.out.println(".............");
             switch (numberCase) {
                 case 1:
                     //Thêm

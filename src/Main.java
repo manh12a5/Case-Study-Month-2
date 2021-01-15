@@ -2,8 +2,8 @@ import transfer.EmployeeListSwitch;
 import transfer.StudentListSwitch;
 import transfer.TeacherListSwitch;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import javax.swing.*;
+import java.io.Console;
 import java.util.Scanner;
 
 public class Main {
@@ -15,6 +15,7 @@ public class Main {
         StudentListSwitch studentListSwitch = new StudentListSwitch();
         TeacherListSwitch teacherListSwitch = new TeacherListSwitch();
 
+        System.out.println("--------------------------------------------------");
         System.out.println("---- QUẢN LÝ NHÀ TRƯỜNG ----");
         byte choice;
         do {

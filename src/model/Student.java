@@ -52,11 +52,11 @@ public class Student extends PPerson implements Serializable {
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
         do {
-            System.out.println("Nhập điểm trung bình: ");
+            System.out.print("Nhập điểm trung bình: ");
             avgNumber = scanner.nextDouble();
         } while (!checkAVGNumber(avgNumber));
         do {
-            System.out.println("Nhập email: ");
+            System.out.print("Nhập email: ");
             email = scanner1.nextLine();
         } while (!checkEmail(email));
     }

@@ -24,7 +24,7 @@ public class TeacherManagement implements IManagement {
     @Override
     public void editPerson() {
         boolean checkID = false;
-        System.out.println("Nhập mã giáo viên cần sửa: ");
+        System.out.print("Nhập mã giáo viên cần sửa: ");
         String editNumberID = scanner.nextLine();
         for (int i = 0; i < arrTeachers.size(); i++) {
             if (editNumberID.equals(arrTeachers.get(i).getNumberID())) {
@@ -43,7 +43,7 @@ public class TeacherManagement implements IManagement {
     @Override
     public void removePerson() {
         boolean checkID = false;
-        System.out.println("Nhập mã giáo viên cần xóa: ");
+        System.out.print("Nhập mã giáo viên cần xóa: ");
         String removeNumberID = scanner.nextLine();
         for (int i = 0; i < arrTeachers.size(); i++) {
             if (removeNumberID.equals(arrTeachers.get(i).getNumberID())) {
@@ -68,7 +68,7 @@ public class TeacherManagement implements IManagement {
     @Override
     public void searchPerson() {
         byte count = 0;
-        System.out.println("Nhập mã giáo viên cần tìm: ");
+        System.out.print("Nhập mã giáo viên cần tìm: ");
         String searchNumberID = scanner.nextLine();
         for (int i = 0; i < arrTeachers.size(); i++) {
             if (searchNumberID.equals(arrTeachers.get(i).getNumberID())) {
@@ -114,7 +114,7 @@ public class TeacherManagement implements IManagement {
     //8. Tổng tiền
     public void totalSalaryTeacher() {
         byte count = 0;
-        System.out.println("Nhập mã giáo viên cần tính tổng: ");
+        System.out.print("Nhập mã giáo viên cần tính tổng: ");
         String searchNumberID = scanner.nextLine();
         for (int i = 0; i < arrTeachers.size(); i++) {
             if (searchNumberID.equals(arrTeachers.get(i).getNumberID())) {

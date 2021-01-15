@@ -85,19 +85,19 @@ public class Employee extends PPerson implements Serializable, IPerson {
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
         do {
-            System.out.println("Nhập nghề nghiệp nhân viên: ");
+            System.out.print("Nhập nghề nghiệp nhân viên: ");
             job = scanner.nextLine();
         } while (!checkJob(job));
         do {
-            System.out.println("Nhập lương cơ bản: ");
+            System.out.print("Nhập lương cơ bản: ");
             originalSalary = scanner1.nextDouble();
         } while (!checkOriginalSalary(originalSalary));
         do {
-            System.out.println("Nhập lương làm thêm giờ: ");
+            System.out.print("Nhập lương làm thêm giờ: ");
             bonusSalary = scanner.nextDouble();
         } while (bonusSalary < 0.0);
         do {
-            System.out.println("Nhập số tiền phạt: ");
+            System.out.print("Nhập số tiền phạt: ");
             forfeitSalary = scanner1.nextDouble();
         } while (forfeitSalary < 0.0);
     }

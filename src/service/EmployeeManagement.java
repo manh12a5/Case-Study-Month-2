@@ -28,7 +28,7 @@ public class EmployeeManagement implements IManagement {
     @Override
     public void editPerson() {
         boolean checkID = false;
-        System.out.println("Nhập mã nhân viên cần sửa: ");
+        System.out.print("Nhập mã nhân viên cần sửa: ");
         String editNumberID = scanner.nextLine();
         for (String key : arrEmployees.keySet()) {
             if (editNumberID.equals(arrEmployees.get(key).getNumberID())) {
@@ -47,7 +47,7 @@ public class EmployeeManagement implements IManagement {
     @Override
     public void removePerson() {
         boolean checkID = false;
-        System.out.println("Nhập mã nhân viên cần xóa: ");
+        System.out.print("Nhập mã nhân viên cần xóa: ");
         String removeNumberID = scanner.nextLine();
         for (String key : arrEmployees.keySet()) {
             if (removeNumberID.equals(arrEmployees.get(key).getNumberID())) {
@@ -74,7 +74,7 @@ public class EmployeeManagement implements IManagement {
     @Override
     public void searchPerson() {
         byte count = 0;
-        System.out.println("Nhập mã nhân viên cần tìm: ");
+        System.out.print("Nhập mã nhân viên cần tìm: ");
         String searchNumberID = scanner.nextLine();
         for (String key : arrEmployees.keySet()) {
             if (searchNumberID.equals(arrEmployees.get(key).getNumberID())) {
