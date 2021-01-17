@@ -52,11 +52,11 @@ public class Student extends PPerson implements Serializable {
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
         do {
-            System.out.print("Nhập điểm trung bình: ");
+            System.out.println("Nhập điểm trung bình: ");
             avgNumber = scanner.nextDouble();
         } while (!checkAVGNumber(avgNumber));
         do {
-            System.out.print("Nhập email: ");
+            System.out.println("Nhập email: ");
             email = scanner1.nextLine();
         } while (!checkEmail(email));
     }
@@ -75,7 +75,7 @@ public class Student extends PPerson implements Serializable {
 
     //Check Email
     public boolean checkEmail(String email) {
-        Pattern pattern = Pattern.compile("^\\w+[A-Za-z0-9]+@\\w+.\\w{2,6}$");
+        Pattern pattern = Pattern.compile("^\\w+[A-Za-z0-9.]+@\\w+.\\w{2,6}$");
         if (!pattern.matcher(email).matches()) {
             System.err.println("Nhập sai Email");
             return false;
@@ -88,9 +88,11 @@ public class Student extends PPerson implements Serializable {
     @Override
     public String toString() {
         return super.toString() +
-                "{ Student }" + "\n" +
-                "Điểm trung bình: " + avgNumber + " ' " +
-                "Email: " + email;
+                "-----{                STUDENT                 }-----" + "\n" +
+                "|                       [*]                        |" + "\n" +
+                "  - Điểm trung bình: " + avgNumber + "\n" +
+                "  - Email: " + email + "\n" +
+                "\\__________________________________________________/" + "\n";
     }
 
 }

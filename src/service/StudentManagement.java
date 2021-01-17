@@ -60,7 +60,8 @@ public class StudentManagement implements IManagement {
     @Override
     public void displayAll() {
         for (int i = 0; i < arrStudents.size(); i++) {
-            System.out.println(arrStudents.get(i));
+            System.out.println("|                      { " + (i + 1) + " }                       |" + "\n" +
+                    arrStudents.get(i));
         }
     }
 
@@ -114,7 +115,8 @@ public class StudentManagement implements IManagement {
         System.out.println("Sinh viên được học bổng");
         for (int i = 0; i < arrStudents.size(); i++) {
             if (arrStudents.get(i).getAvgNumber() >= 8.0) {
-                System.out.println(arrStudents.get(i));
+                System.out.println("|                      { " + (i + 1) + " }                       |" + "\n" +
+                        arrStudents.get(i));
             }
         }
     }

@@ -70,7 +70,7 @@ public class Employee extends PPerson implements Serializable, IPerson {
             if (job.equalsIgnoreCase("Bảo Vệ") || job.equalsIgnoreCase("Bao Ve")) {
                 totalSalary = (originalSalary + 400000) + bonusSalary - forfeitSalary;
             } else if (job.equalsIgnoreCase("Lao Công") || job.equalsIgnoreCase("Lao Cong")) {
-                totalSalary = (originalSalary * 0.2) + bonusSalary - forfeitSalary;
+                totalSalary = (originalSalary * 1.2) + bonusSalary - forfeitSalary;
             } else if (job.equalsIgnoreCase("Y Tá") || job.equalsIgnoreCase("Y Ta")) {
                 totalSalary = originalSalary + bonusSalary - forfeitSalary;
             }
@@ -85,19 +85,19 @@ public class Employee extends PPerson implements Serializable, IPerson {
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
         do {
-            System.out.print("Nhập nghề nghiệp nhân viên: ");
+            System.out.println("Nhập nghề nghiệp nhân viên: ");
             job = scanner.nextLine();
         } while (!checkJob(job));
         do {
-            System.out.print("Nhập lương cơ bản: ");
+            System.out.println("Nhập lương cơ bản: ");
             originalSalary = scanner1.nextDouble();
         } while (!checkOriginalSalary(originalSalary));
         do {
-            System.out.print("Nhập lương làm thêm giờ: ");
+            System.out.println("Nhập lương làm thêm giờ: ");
             bonusSalary = scanner.nextDouble();
         } while (bonusSalary < 0.0);
         do {
-            System.out.print("Nhập số tiền phạt: ");
+            System.out.println("Nhập số tiền phạt: ");
             forfeitSalary = scanner1.nextDouble();
         } while (forfeitSalary < 0.0);
     }
@@ -133,11 +133,13 @@ public class Employee extends PPerson implements Serializable, IPerson {
     @Override
     public String toString() {
         return super.toString() +
-                "{ Employee }" + "\n" +
-                "Nghề ngiệp: " + job + " ' " +
-                "Lương cơ bản: " + originalSalary + " ' " +
-                "Số tiền làm thêm: " + bonusSalary + " ' " +
-                "Số tiền phạt: " + forfeitSalary;
+                "-----{                EMPLOYEE                }-----" + "\n" +
+                "|                       [*]                        |" + "\n" +
+                "  - Nghề ngiệp: " + job + "\n" +
+                "  - Lương cơ bản: " + originalSalary + "\n" +
+                "  - Số tiền làm thêm: " + bonusSalary + "\n" +
+                "  - Số tiền phạt: " + forfeitSalary + "\n" +
+                "\\__________________________________________________/" + "\n";
     }
 
 }

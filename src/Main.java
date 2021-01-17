@@ -2,8 +2,6 @@ import transfer.EmployeeListSwitch;
 import transfer.StudentListSwitch;
 import transfer.TeacherListSwitch;
 
-import javax.swing.*;
-import java.io.Console;
 import java.util.Scanner;
 
 public class Main {
@@ -15,14 +13,16 @@ public class Main {
         StudentListSwitch studentListSwitch = new StudentListSwitch();
         TeacherListSwitch teacherListSwitch = new TeacherListSwitch();
 
-        System.out.println("--------------------------------------------------");
-        System.out.println("---- QUẢN LÝ NHÀ TRƯỜNG ----");
+        System.out.println("----------------------------------------------------");
+        System.out.println("----|           QUẢN LÝ NHÀ TRƯỜNG             |----");
         byte choice;
         do {
-            System.out.println("1. Thông tin sinh viên");
-            System.out.println("2. Thông tin giáo viên");
-            System.out.println("3. Thông tin nhân viên");
-            System.out.println("0. Exit");
+            System.out.println("----------------------------------------------------");
+            System.out.println("1. Thông tin sinh viên                             |");
+            System.out.println("2. Thông tin giáo viên                             |");
+            System.out.println("3. Thông tin nhân viên                             |");
+            System.out.println("0. Exit                                            |");
+            System.out.println("----------------------------------------------------");
             System.out.print("Choice number: ");
             choice = scanner.nextByte();
             switch (choice) {

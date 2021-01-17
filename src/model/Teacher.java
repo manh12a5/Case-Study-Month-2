@@ -78,15 +78,15 @@ public class Teacher extends PPerson implements Serializable, IPerson {
         super.inputInformation();
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.print("Nhập lớp dạy: ");
+            System.out.println("Nhập lớp dạy: ");
             classTeach = scanner.nextLine();
         } while (!checkClassTeach(classTeach));
         do {
-            System.out.print("Nhập lương dạy trong 1 giờ: ");
+            System.out.println("Nhập lương dạy trong 1 giờ: ");
             salaryInOneHour = Double.parseDouble(scanner.nextLine());
         } while (salaryInOneHour < 0.0);
         do {
-            System.out.print("Nhập số giờ dạy trong tháng: ");
+            System.out.println("Nhập số giờ dạy trong tháng: ");
             hourTeachInMonth = scanner.nextDouble();
         } while (hourTeachInMonth < 0.0);
     }
@@ -99,7 +99,7 @@ public class Teacher extends PPerson implements Serializable, IPerson {
         if (!pattern.matcher(classTeach).matches()) {
             System.err.println("Nhập sai tên lớp");
             System.err.println("Tên lớp phải có giờ dạy (Giờ G, H, I, K, L, M)");
-            System.out.println("Ví dụ tên lớp đúng: C1011G, C0903M, C1010K…");
+            System.out.println("(Ví dụ tên lớp đúng: C1011G, C0903M, C1010K…)");
             return false;
         } else {
             return true;
@@ -110,10 +110,12 @@ public class Teacher extends PPerson implements Serializable, IPerson {
     @Override
     public String toString() {
         return super.toString() +
-                "{ Teacher }" + "\n" +
-                "Lớp dạy: " + classTeach + " ' " +
-                "Hệ số lương trong 1 giờ dạy: " + salaryInOneHour + " ' " +
-                "Số giờ dạy trong tháng: " + hourTeachInMonth;
+                "-----{                TEACHER                 }-----" + "\n" +
+                "|                       [*]                        |" + "\n" +
+                "  - Lớp dạy: " + classTeach + "\n" +
+                "  - Hệ số lương trong 1 giờ dạy: " + salaryInOneHour + "\n" +
+                "  - Số giờ dạy trong tháng: " + hourTeachInMonth + "\n" +
+                "\\__________________________________________________/" + "\n";
     }
 
 }

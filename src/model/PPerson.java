@@ -84,27 +84,27 @@ public class PPerson implements Serializable {
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
         do {
-            System.out.print("Nhập mã ID: ");
+            System.out.println("Nhập mã ID: ");
             numberID = scanner.nextLine();
         } while (!checkNumberID(numberID));
         do {
-            System.out.print("Nhập họ tên: ");
+            System.out.println("Nhập họ tên: ");
             name = scanner1.nextLine();
         } while (!checkName(name));
         do {
-            System.out.print("Nhập giới tính (Nam/Nữ): ");
+            System.out.println("Nhập giới tính (Nam/Nữ): ");
             gender = scanner.nextLine();
         } while (!checkGender(gender));
         do {
-            System.out.print("Nhập ngày sinh (dd/MM/yyyy): ");
+            System.out.println("Nhập ngày sinh (dd/MM/yyyy): ");
             birthday = scanner1.nextLine();
         } while (!checkBirthday(birthday));
         do {
-            System.out.print("Nhập địa chỉ: ");
+            System.out.println("Nhập địa chỉ: ");
             address = scanner.nextLine();
         } while (!checkAddress(address));
         do {
-            System.out.print("Nhập số điện thoại: ");
+            System.out.println("Nhập số điện thoại: ");
             numberPhone = scanner1.nextLine();
         } while (!checkNumberPhone(numberPhone));
     }
@@ -182,12 +182,14 @@ public class PPerson implements Serializable {
     //toString
     @Override
     public String toString() {
-        return "----- { Thông tin chung } -----" + "\n" +
-                "Mã ID: " + numberID + " ' " +
-                "Họ tên: " + name + " ' " +
-                "Giới tính: " + gender + " ' " +
-                "Ngày sinh: " + birthday + " ' " +
-                "Địa chỉ: " + address + "\n";
+        return "----------------------------------------------------" + "\n" +
+                "-----{            THÔNG TIN CHUNG             }-----" + "\n" +
+                "|                       |*|                        |" + "\n" +
+                "  - Mã ID: " + numberID + "\n" +
+                "  - Họ tên: " + name + "\n" +
+                "  - Giới tính: " + gender + "\n" +
+                "  - Ngày sinh: " + birthday + "\n" +
+                "  - Địa chỉ: " + address + "\n";
     }
 
 }

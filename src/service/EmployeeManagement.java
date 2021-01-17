@@ -64,9 +64,11 @@ public class EmployeeManagement implements IManagement {
     //4. Hiển thị toàn bộ
     @Override
     public void displayAll() {
+        int i = 1;
         for (String key : arrEmployees.keySet()) {
             Employee value = arrEmployees.get(key);
-            System.out.println(value);
+            System.out.println("|                      { " + (i++) + " }                       |" + "\n" +
+                    value);
         }
     }
 

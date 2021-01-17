@@ -60,7 +60,8 @@ public class TeacherManagement implements IManagement {
     @Override
     public void displayAll() {
         for (int i = 0; i < arrTeachers.size(); i++) {
-            System.out.println(arrTeachers.get(i));
+            System.out.println("|                      { " + (i + 1) + " }                       |" + "\n" +
+                    arrTeachers.get(i));
         }
     }
 
