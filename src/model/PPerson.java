@@ -109,7 +109,7 @@ public class PPerson implements Serializable {
         } while (!checkNumberPhone(numberPhone));
     }
 
-    //Check thông tin
+    //Check điều kiện nhập
 
     //Check mã ID
     public boolean checkNumberID(String numberID) {
