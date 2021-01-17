@@ -79,6 +79,8 @@ public class Employee extends PPerson implements Serializable, IPerson {
     }
 
     //Danh sách phương thức nhập
+
+    //Nhập thông tin nhân viên
     @Override
     public void inputInformation() {
         super.inputInformation();

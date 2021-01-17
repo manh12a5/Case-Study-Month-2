@@ -61,7 +61,7 @@ public class Student extends PPerson implements Serializable {
         } while (!checkEmail(email));
     }
 
-    //Check thông tin
+    //Check điều kiện nhập
 
     //Check điểm trung bình
     public boolean checkAVGNumber(double avgNumber) {

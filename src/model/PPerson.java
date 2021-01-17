@@ -77,7 +77,7 @@ public class PPerson implements Serializable {
         this.numberPhone = numberPhone;
     }
 
-    //Danh sách phương thức
+    //Danh sách phương thức nhập
 
     //Nhập thông tin
     public void inputInformation() {

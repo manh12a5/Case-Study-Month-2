@@ -91,7 +91,7 @@ public class Teacher extends PPerson implements Serializable, IPerson {
         } while (hourTeachInMonth < 0.0);
     }
 
-    //Check thông tin
+    //Check điều kiện nhập
 
     //Check phòng dạy
     public boolean checkClassTeach(String classTeach) {
