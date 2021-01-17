@@ -53,7 +53,8 @@ public class Teacher extends PPerson implements Serializable, IPerson {
         this.hourTeachInMonth = hourTeachInMonth;
     }
 
-    //Tính tổng tiền
+    //Tính tổng tiền  //Interface
+    @Override
     public double getTotalSalary() {
         double totalSalary = 0.0;
         for (int i = 0; i < classTeach.length(); i++) {

@@ -63,6 +63,7 @@ public class Employee extends PPerson implements Serializable, IPerson {
         this.forfeitSalary = forfeitSalary;
     }
 
+    //Tình tổng tiền  //Interface
     @Override
     public double getTotalSalary() {
         double totalSalary = 0.0;
