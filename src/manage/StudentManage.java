@@ -1,15 +1,14 @@
-package menu;
+package manage;
 
-import service.StudentManagement;
-import menu.IListSwitch;
+import service.StudentService;
 
 import java.util.Scanner;
 
-public class StudentListSwitch implements IListSwitch {
+public class StudentManage implements IManageSwitch {
     Scanner scanner = new Scanner(System.in);
 
-    public void listManagement() {
-        StudentManagement studentManagement = new StudentManagement();
+    public void manageSwitch() {
+        StudentService studentService = new StudentService();
         byte numberCase;
         do {
             System.out.println("----------------------------------------------------");
@@ -33,43 +32,43 @@ public class StudentListSwitch implements IListSwitch {
             switch (numberCase) {
                 case 1:
                     //Thêm
-                    studentManagement.addPerson();
+                    studentService.addPerson();
                     break;
                 case 2:
                     //Sửa
-                    studentManagement.editPerson();
+                    studentService.editPerson();
                     break;
                 case 3:
                     //Xóa
-                    studentManagement.removePerson();
+                    studentService.removePerson();
                     break;
                 case 4:
                     //Hiển thị toàn bộ
-                    studentManagement.displayAll();
+                    studentService.displayAll();
                     break;
                 case 5:
                     //Tìm kiếm
-                    studentManagement.searchPerson();
+                    studentService.searchPerson();
                     break;
                 case 6:
                     //Sắp xếp theo mã sinh viên
-                    studentManagement.sortNumberID();
+                    studentService.sortNumberID();
                     break;
                 case 7:
                     //Sắp xếp theo điểm trung bình
-                    studentManagement.sortAVGNumber();
+                    studentService.sortAVGNumber();
                     break;
                 case 8:
                     //Hiển thị nhưng học sinh được học bổng
-                    studentManagement.showStudentScholarship();
+                    studentService.showStudentScholarship();
                     break;
                 case 9:
                     //Đọc (Open)
-                    studentManagement.readFilePerson();
+                    studentService.readFilePerson();
                     break;
                 case 10:
                     //Ghi (Save)
-                    studentManagement.writeFilePerson();
+                    studentService.writeFilePerson();
                     break;
             }
         } while (numberCase != 0);

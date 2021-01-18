@@ -1,14 +1,14 @@
 package view;
 
-import service.TeacherManagement;
+import service.TeacherService;
 
 import java.util.Scanner;
 
-public class TeacherViewInfor implements IViewInformation {
+public class TeacherView implements IViewSwitch {
     Scanner scanner = new Scanner(System.in);
 
     public void viewSwitch() {
-        TeacherManagement teacherManagement = new TeacherManagement();
+        TeacherService teacherService = new TeacherService();
         byte numberCase;
         do {
             System.out.println("----------------------------------------------------");
@@ -29,27 +29,27 @@ public class TeacherViewInfor implements IViewInformation {
             switch (numberCase) {
                 case 1:
                     //Hiển thị toàn bộ
-                    teacherManagement.displayAll();
+                    teacherService.displayAll();
                     break;
                 case 2:
                     //Tìm kiếm
-                    teacherManagement.searchPerson();
+                    teacherService.searchPerson();
                     break;
                 case 3:
                     //Sắp xếp
-                    teacherManagement.sortNumberID();
+                    teacherService.sortNumberID();
                     break;
                 case 4:
                     //Tính tổng tiền
-                    teacherManagement.totalSalaryTeacher();
+                    teacherService.totalSalaryTeacher();
                     break;
                 case 9:
                     //Đọc
-                    teacherManagement.readFilePerson();
+                    teacherService.readFilePerson();
                     break;
                 case 10:
                     //Ghi
-                    teacherManagement.writeFilePerson();
+                    teacherService.writeFilePerson();
                     break;
             }
         } while (numberCase != 0);

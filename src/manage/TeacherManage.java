@@ -1,15 +1,14 @@
-package menu;
+package manage;
 
-import service.TeacherManagement;
-import menu.IListSwitch;
+import service.TeacherService;
 
 import java.util.Scanner;
 
-public class TeacherListSwitch implements IListSwitch {
+public class TeacherManage implements IManageSwitch {
     Scanner scanner = new Scanner(System.in);
 
-    public void listManagement() {
-        TeacherManagement teacherManagement = new TeacherManagement();
+    public void manageSwitch() {
+        TeacherService teacherService = new TeacherService();
         byte numberCase;
         do {
             System.out.println("----------------------------------------------------");
@@ -33,43 +32,43 @@ public class TeacherListSwitch implements IListSwitch {
             switch (numberCase) {
                 case 1:
                     //Thêm
-                    teacherManagement.addPerson();
+                    teacherService.addPerson();
                     break;
                 case 2:
                     //Sửa
-                    teacherManagement.editPerson();
+                    teacherService.editPerson();
                     break;
                 case 3:
                     //Xóa
-                    teacherManagement.removePerson();
+                    teacherService.removePerson();
                     break;
                 case 4:
                     //Hiển thị toàn bộ
-                    teacherManagement.displayAll();
+                    teacherService.displayAll();
                     break;
                 case 5:
                     //Tìm kiếm
-                    teacherManagement.searchPerson();
+                    teacherService.searchPerson();
                     break;
                 case 6:
                     //Hiển thị giáo viên lương cao nhất
-                    teacherManagement.showTeacherHighSalary();
+                    teacherService.showTeacherHighSalary();
                     break;
                 case 7:
                     //Sắp xếp
-                    teacherManagement.sortNumberID();
+                    teacherService.sortNumberID();
                     break;
                 case 8:
                     //Tính tổng tiền
-                    teacherManagement.totalSalaryTeacher();
+                    teacherService.totalSalaryTeacher();
                     break;
                 case 9:
                     //Đọc
-                    teacherManagement.readFilePerson();
+                    teacherService.readFilePerson();
                     break;
                 case 10:
                     //Ghi
-                    teacherManagement.writeFilePerson();
+                    teacherService.writeFilePerson();
                     break;
             }
         } while (numberCase != 0);

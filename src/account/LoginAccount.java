@@ -21,13 +21,13 @@ public class LoginAccount {
         System.out.println(".............");
         switch (loginUser) {
             case "admin":
-                admin.displayUser();
+                admin.userSwitch();
                 break;
             case "teacher":
-                teacherUser.displayUser();
+                teacherUser.userSwitch();
                 break;
             case "student":
-                studentUser.displayUser();
+                studentUser.userSwitch();
                 break;
             default:
                 System.out.println("  - Nhập sai tài khoản");

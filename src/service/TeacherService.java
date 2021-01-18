@@ -5,7 +5,7 @@ import storage.TeacherReadAndWrite;
 
 import java.util.*;
 
-public class TeacherManagement implements IManagement {
+public class TeacherService implements IService {
 
     Scanner scanner = new Scanner(System.in);
     private List<Teacher> arrTeachers = new ArrayList<>();

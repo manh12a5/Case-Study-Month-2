@@ -1,6 +1,6 @@
 package service;
 
-public interface IManagement {
+public interface IService {
 
     //1.
     void addPerson();

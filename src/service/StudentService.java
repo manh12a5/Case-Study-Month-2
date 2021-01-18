@@ -5,7 +5,7 @@ import storage.StudentReadAndWrite;
 
 import java.util.*;
 
-public class StudentManagement implements IManagement {
+public class StudentService implements IService {
 
     Scanner scanner = new Scanner(System.in);
     private List<Student> arrStudents = new LinkedList<>();

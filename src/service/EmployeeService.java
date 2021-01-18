@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class EmployeeManagement implements IManagement {
+public class EmployeeService implements IService {
 
     Scanner scanner = new Scanner(System.in);
     private Map<String, Employee> arrEmployees = new HashMap<>();

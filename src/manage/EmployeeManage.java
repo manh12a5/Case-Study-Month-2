@@ -1,15 +1,14 @@
-package menu;
+package manage;
 
-import service.EmployeeManagement;
-import menu.IListSwitch;
+import service.EmployeeService;
 
 import java.util.Scanner;
 
-public class EmployeeListSwitch implements IListSwitch {
+public class EmployeeManage implements IManageSwitch {
     Scanner scanner = new Scanner(System.in);
 
-    public void listManagement() {
-        EmployeeManagement employeeManagement = new EmployeeManagement();
+    public void manageSwitch() {
+        EmployeeService employeeService = new EmployeeService();
         byte numberCase;
         do {
             System.out.println("----------------------------------------------------");
@@ -33,43 +32,43 @@ public class EmployeeListSwitch implements IListSwitch {
             switch (numberCase) {
                 case 1:
                     //Thêm
-                    employeeManagement.addPerson();
+                    employeeService.addPerson();
                     break;
                 case 2:
                     //Sửa
-                    employeeManagement.editPerson();
+                    employeeService.editPerson();
                     break;
                 case 3:
                     //Xóa
-                    employeeManagement.removePerson();
+                    employeeService.removePerson();
                     break;
                 case 4:
                     //Display all
-                    employeeManagement.displayAll();
+                    employeeService.displayAll();
                     break;
                 case 5:
                     //Tìm kiếm
-                    employeeManagement.searchPerson();
+                    employeeService.searchPerson();
                     break;
                 case 6:
                     //Min Salary
-                    employeeManagement.showEmployeeLowSalary();
+                    employeeService.showEmployeeLowSalary();
                     break;
                 case 7:
                     //Kiểm tra tuổi của nhân viên
-                    employeeManagement.showAgeEmployee();
+                    employeeService.showAgeEmployee();
                     break;
                 case 8:
                     //Tổng tiền trả toàn bộ nhân viên trong trường
-                    employeeManagement.totalSalaryAllEmployee();
+                    employeeService.totalSalaryAllEmployee();
                     break;
                 case 9:
                     //Đọc
-                    employeeManagement.readFilePerson();
+                    employeeService.readFilePerson();
                     break;
                 case 10:
                     //Ghi
-                    employeeManagement.writeFilePerson();
+                    employeeService.writeFilePerson();
                     break;
             }
         } while (numberCase != 0);

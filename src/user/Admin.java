@@ -1,18 +1,18 @@
 package user;
 
-import menu.EmployeeListSwitch;
-import menu.StudentListSwitch;
-import menu.TeacherListSwitch;
+import manage.EmployeeManage;
+import manage.StudentManage;
+import manage.TeacherManage;
 
 import java.util.Scanner;
 
-public class Admin implements IDisplayUser {
+public class Admin implements IUserSwitch {
     Scanner scanner = new Scanner(System.in);
 
-    public void displayUser() {
-        EmployeeListSwitch employeeAdminSwitch = new EmployeeListSwitch();
-        StudentListSwitch studentAdminSwitch = new StudentListSwitch();
-        TeacherListSwitch teacherAdminSwitch = new TeacherListSwitch();
+    public void userSwitch() {
+        EmployeeManage employeeAdminSwitch = new EmployeeManage();
+        StudentManage studentAdminSwitch = new StudentManage();
+        TeacherManage teacherAdminSwitch = new TeacherManage();
 
         System.out.println("----------------------------------------------------");
         System.out.println("----|               ADMIN LOGIN                |----");
@@ -30,15 +30,15 @@ public class Admin implements IDisplayUser {
             switch (choice) {
                 case 1:
                     //Quản lý sinh viên
-                    studentAdminSwitch.listManagement();
+                    studentAdminSwitch.manageSwitch();
                     break;
                 case 2:
                     //Quản lý giáo viên
-                    teacherAdminSwitch.listManagement();
+                    teacherAdminSwitch.manageSwitch();
                     break;
                 case 3:
                     //Quản lý nhân viên
-                    employeeAdminSwitch.listManagement();
+                    employeeAdminSwitch.manageSwitch();
                     break;
             }
         } while (choice != 0);

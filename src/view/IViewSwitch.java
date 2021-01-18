@@ -1,5 +1,5 @@
 package view;
 
-public interface IViewInformation {
+public interface IViewSwitch {
     void viewSwitch();
 }
