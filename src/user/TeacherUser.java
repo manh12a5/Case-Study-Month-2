@@ -1,7 +1,7 @@
 package user;
 
 import menu.AllStudentSwitch;
-import menu.TeacherInformationSwitch;
+import view.TeacherViewInfor;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class TeacherUser implements IDisplayUser {
 
     public void displayUser() {
         AllStudentSwitch studentListSwitch = new AllStudentSwitch();
-        TeacherInformationSwitch teacherInformationSwitch = new TeacherInformationSwitch();
+        TeacherViewInfor teacherViewInfor = new TeacherViewInfor();
 
         System.out.println("----------------------------------------------------");
         System.out.println("----|              TEACHER LOGIN               |----");
@@ -31,7 +31,7 @@ public class TeacherUser implements IDisplayUser {
                     break;
                 case 2:
                     //Thông tin giáo viên
-                    teacherInformationSwitch.listManagement();
+                    teacherViewInfor.viewInformation();
                     break;
             }
         } while (choice != 0);

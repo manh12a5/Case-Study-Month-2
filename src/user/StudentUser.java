@@ -1,6 +1,6 @@
 package user;
 
-import menu.StudentInformationSwitch;
+import view.StudentViewInfor;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ public class StudentUser implements IDisplayUser {
     Scanner scanner = new Scanner(System.in);
 
     public void displayUser() {
-        StudentInformationSwitch studentInformationSwitch = new StudentInformationSwitch();
+        StudentViewInfor studentViewInfor = new StudentViewInfor();
 
         System.out.println("----------------------------------------------------");
         System.out.println("----|              STUDENT LOGIN               |----");
@@ -24,7 +24,7 @@ public class StudentUser implements IDisplayUser {
             switch (choice) {
                 case 1:
                     //Thông tin sinh viên
-                    studentInformationSwitch.listManagement();
+                    studentViewInfor.viewInformation();
                     break;
             }
         } while (choice != 0);

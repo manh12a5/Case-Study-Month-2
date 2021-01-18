@@ -1,14 +1,14 @@
-package menu;
+package view;
 
 import menu.IListSwitch;
 import service.StudentManagement;
 
 import java.util.Scanner;
 
-public class StudentInformationSwitch implements IListSwitch {
+public class StudentViewInfor implements IViewInformation {
     Scanner scanner = new Scanner(System.in);
 
-    public void listManagement() {
+    public void viewInformation() {
         StudentManagement studentManagement = new StudentManagement();
         byte numberCase;
         do {

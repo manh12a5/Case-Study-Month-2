@@ -1,6 +1,4 @@
-import user.Admin;
-import user.StudentUser;
-import user.TeacherUser;
+import account.LoginAccount;
 
 import java.util.Scanner;
 
@@ -8,6 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        LoginAccount loginAccount = new LoginAccount();
 
         byte choice;
         do {
@@ -23,40 +23,12 @@ public class Main {
             System.out.println(".............");
             switch (choice) {
                 case 1:
-                    loginUser();
+                    loginAccount.listLogin();
                     break;
             }
         } while (choice != 0);
         //Exit
         System.out.println("Thoát chương trình");
-    }
-
-    public static void loginUser() {
-        Scanner scanner = new Scanner(System.in);
-
-        Admin admin = new Admin();
-        StudentUser studentUser = new StudentUser();
-        TeacherUser teacherUser = new TeacherUser();
-
-        String loginUser;
-        System.out.print("Nhập tên tài khoản: ");
-        loginUser = scanner.nextLine();
-        System.out.println(".............");
-        switch (loginUser) {
-            case "admin":
-                admin.displayUser();
-                break;
-            case "teacher":
-                teacherUser.displayUser();
-                break;
-            case "student":
-                studentUser.displayUser();
-                break;
-            default:
-                System.out.println("Nhập sai tài khoản");
-                System.out.println("Trở về trang chính");
-                break;
-        }
     }
 
 }
