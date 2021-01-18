@@ -1,4 +1,4 @@
-package view;
+package account.view;
 
 public class EmployeeView {
 }

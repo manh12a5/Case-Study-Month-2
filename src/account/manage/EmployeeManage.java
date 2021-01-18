@@ -1,4 +1,4 @@
-package manage;
+package account.manage;
 
 import service.EmployeeService;
 

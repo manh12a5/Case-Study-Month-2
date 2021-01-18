@@ -1,7 +1,7 @@
-package user;
+package account.user;
 
-import manage.StudentManage;
-import view.TeacherView;
+import account.manage.StudentManage;
+import account.view.TeacherView;
 
 import java.util.Scanner;
 

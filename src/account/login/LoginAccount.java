@@ -1,8 +1,8 @@
-package account;
+package account.login;
 
-import user.Admin;
-import user.StudentUser;
-import user.TeacherUser;
+import account.user.Admin;
+import account.user.StudentUser;
+import account.user.TeacherUser;
 
 import java.util.Scanner;
 

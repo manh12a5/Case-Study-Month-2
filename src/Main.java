@@ -1,4 +1,4 @@
-import account.LoginAccount;
+import account.login.LoginAccount;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
-package user;
+package account.user;
 
-import view.StudentView;
+import account.view.StudentView;
 
 import java.util.Scanner;
 

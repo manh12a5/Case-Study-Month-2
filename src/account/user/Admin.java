@@ -1,8 +1,8 @@
-package user;
+package account.user;
 
-import manage.EmployeeManage;
-import manage.StudentManage;
-import manage.TeacherManage;
+import account.manage.EmployeeManage;
+import account.manage.StudentManage;
+import account.manage.TeacherManage;
 
 import java.util.Scanner;
 
