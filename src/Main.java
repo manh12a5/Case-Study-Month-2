@@ -25,6 +25,7 @@ public class Main {
             System.out.println("----------------------------------------------------");
             System.out.print("Choice number: ");
             choice = scanner.nextByte();
+            System.out.println(".............");
             switch (choice) {
                 case 1:
                     //Quản lý sinh viên

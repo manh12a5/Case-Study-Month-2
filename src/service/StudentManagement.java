@@ -34,7 +34,7 @@ public class StudentManagement implements IManagement {
             }
         }
         if (!checkID) {
-            System.err.println("Không có mã sinh viên cần sửa");
+            System.err.println("Không có mã học sinh cần sửa");
         }
     }
 
@@ -42,7 +42,7 @@ public class StudentManagement implements IManagement {
     @Override
     public void removePerson() {
         boolean checkID = false;
-        System.out.print("Nhập mã sinh viên cần xóa: ");
+        System.out.print("Nhập mã học sinh cần xóa: ");
         String removeNumberID = scanner.nextLine();
         for (int i = 0; i < arrStudents.size(); i++) {
             if (removeNumberID.equals(arrStudents.get(i).getNumberID())) {
@@ -69,7 +69,7 @@ public class StudentManagement implements IManagement {
     @Override
     public void searchPerson() {
         byte count = 0;
-        System.out.print("Nhập mã sinh viên cần tìm: ");
+        System.out.print("Nhập mã học sinh cần tìm: ");
         String searchNumberID = scanner.nextLine();
         for (int i = 0; i < arrStudents.size(); i++) {
             if (searchNumberID.equals(arrStudents.get(i).getNumberID())) {
@@ -112,7 +112,7 @@ public class StudentManagement implements IManagement {
 
     //8. Check học bổng
     public void showStudentScholarship() {
-        System.out.println("Sinh viên được học bổng");
+        System.out.println("Học sinh được học bổng");
         for (int i = 0; i < arrStudents.size(); i++) {
             if (arrStudents.get(i).getAvgNumber() >= 8.0) {
                 System.out.println("|                      { " + (i + 1) + " }                       |" + "\n" +

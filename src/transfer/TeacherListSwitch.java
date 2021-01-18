@@ -12,6 +12,8 @@ public class TeacherListSwitch implements IListSwitch {
         byte numberCase;
         do {
             System.out.println("----------------------------------------------------");
+            System.out.println("----{            Quản Lý Giáo Viên             }----");
+            System.out.println("----------------------------------------------------");
             System.out.println("1. Thêm giáo viên                                  |");
             System.out.println("2. Sửa giáo viên                                   |");
             System.out.println("3. Xóa giáo viên                                   |");

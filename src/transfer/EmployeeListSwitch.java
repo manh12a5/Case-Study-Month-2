@@ -12,6 +12,8 @@ public class EmployeeListSwitch implements IListSwitch {
         byte numberCase;
         do {
             System.out.println("----------------------------------------------------");
+            System.out.println("----{            Quản Lý Nhân Viên             }----");
+            System.out.println("----------------------------------------------------");
             System.out.println("1. Thêm nhân viên                                  |");
             System.out.println("2. Sửa nhân viên                                   |");
             System.out.println("3. Xóa nhân viên                                   |");

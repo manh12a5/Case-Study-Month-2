@@ -9,24 +9,27 @@ public class Employee extends PPerson implements Serializable, IPerson {
     private String job;
     private double originalSalary;
     private double bonusSalary;
+    private double timeBonus;
     private double forfeitSalary;
 
     //Constructor
     public Employee() {
     }
 
-    public Employee(String job, double originalSalary, double bonusSalary, double forfeitSalary) {
+    public Employee(String job, double originalSalary, double bonusSalary, double timeBonus, double forfeitSalary) {
         this.job = job;
         this.originalSalary = originalSalary;
         this.bonusSalary = bonusSalary;
+        this.timeBonus = timeBonus;
         this.forfeitSalary = forfeitSalary;
     }
 
-    public Employee(String numberID, String name, String gender, String birthday, String address, String numberPhone, String job, double originalSalary, double bonusSalary, double forfeitSalary) {
+    public Employee(String numberID, String name, String gender, String birthday, String address, String numberPhone, String job, double originalSalary, double bonusSalary, double timeBonus, double forfeitSalary) {
         super(numberID, name, gender, birthday, address, numberPhone);
         this.job = job;
         this.originalSalary = originalSalary;
         this.bonusSalary = bonusSalary;
+        this.timeBonus = timeBonus;
         this.forfeitSalary = forfeitSalary;
     }
 
@@ -55,6 +58,14 @@ public class Employee extends PPerson implements Serializable, IPerson {
         this.bonusSalary = bonusSalary;
     }
 
+    public double getTimeBonus() {
+        return Math.round(timeBonus);
+    }
+
+    public void setTimeBonus(double timeBonus) {
+        this.timeBonus = timeBonus;
+    }
+
     public double getForfeitSalary() {
         return forfeitSalary;
     }
@@ -69,11 +80,11 @@ public class Employee extends PPerson implements Serializable, IPerson {
         double totalSalary = 0.0;
         for (int i = 0; i < job.length(); i++) {
             if (job.equalsIgnoreCase("Bảo Vệ") || job.equalsIgnoreCase("Bao Ve")) {
-                totalSalary = (originalSalary + 400000) + bonusSalary - forfeitSalary;
+                totalSalary = (originalSalary + 400000) + (bonusSalary * getTimeBonus()) - forfeitSalary;
             } else if (job.equalsIgnoreCase("Lao Công") || job.equalsIgnoreCase("Lao Cong")) {
-                totalSalary = (originalSalary * 1.2) + bonusSalary - forfeitSalary;
+                totalSalary = (originalSalary * 1.2) + (bonusSalary * getTimeBonus()) - forfeitSalary;
             } else if (job.equalsIgnoreCase("Y Tá") || job.equalsIgnoreCase("Y Ta")) {
-                totalSalary = originalSalary + bonusSalary - forfeitSalary;
+                totalSalary = originalSalary + (bonusSalary * getTimeBonus()) - forfeitSalary;
             }
         }
         return totalSalary;
@@ -96,12 +107,18 @@ public class Employee extends PPerson implements Serializable, IPerson {
             originalSalary = scanner1.nextDouble();
         } while (!checkOriginalSalary(originalSalary));
         do {
-            System.out.println("Nhập lương làm thêm giờ: ");
+            System.out.println("Nhập lương làm thêm 1 giờ: ");
             bonusSalary = scanner.nextDouble();
         } while (bonusSalary < 0.0);
         do {
+            System.out.println("Nhập số giờ làm thêm trong tháng: ");
+            System.out.println("(Ví dụ: 1h30p là 1.5)");
+            timeBonus = scanner1.nextDouble();
+            System.out.println(getTimeBonus());
+        } while (timeBonus < 0.0);
+        do {
             System.out.println("Nhập số tiền phạt: ");
-            forfeitSalary = scanner1.nextDouble();
+            forfeitSalary = scanner.nextDouble();
         } while (forfeitSalary < 0.0);
     }
 
@@ -112,8 +129,7 @@ public class Employee extends PPerson implements Serializable, IPerson {
         for (int i = 0; i < job.length(); i++) {
             if (!job.equalsIgnoreCase("Bảo Vệ") && !job.equalsIgnoreCase("Bao Ve")
                     && !job.equalsIgnoreCase("Lao Công") && !job.equalsIgnoreCase("Lao Cong")
-                    && !job.equalsIgnoreCase("Y Tá") && !job.equalsIgnoreCase("Y Ta") )
-            {
+                    && !job.equalsIgnoreCase("Y Tá") && !job.equalsIgnoreCase("Y Ta")) {
                 System.err.println("Nhập sai nghề nghiệp trong trường");
                 System.out.println("(Nhân viên trong trường chỉ có: Bảo vệ, Lao công, Y tá)");
                 return false;
@@ -141,6 +157,7 @@ public class Employee extends PPerson implements Serializable, IPerson {
                 "  - Nghề ngiệp: " + job + "\n" +
                 "  - Lương cơ bản: " + originalSalary + "\n" +
                 "  - Số tiền làm thêm: " + bonusSalary + "\n" +
+                "  - Số giờ làm thêm trong tháng : " + timeBonus + "\n" +
                 "  - Số tiền phạt: " + forfeitSalary + "\n" +
                 "\\__________________________________________________/" + "\n";
     }

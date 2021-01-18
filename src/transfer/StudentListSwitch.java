@@ -12,14 +12,16 @@ public class StudentListSwitch implements IListSwitch {
         byte numberCase;
         do {
             System.out.println("----------------------------------------------------");
-            System.out.println("1. Thêm sinh viên                                  |");
-            System.out.println("2. Sửa sinh viên                                   |");
-            System.out.println("3. Xóa sinh viên                                   |");
-            System.out.println("4. Hiển thị toàn bộ sinh viên                      |");
-            System.out.println("5. Tìm kiếm sinh viên                              |");
-            System.out.println("6. Sắp xếp theo mã sinh viên                       |");
+            System.out.println("----{             Quản Lý Học Sinh             }----");
+            System.out.println("----------------------------------------------------");
+            System.out.println("1. Thêm học sinh                                   |");
+            System.out.println("2. Sửa học sinh                                    |");
+            System.out.println("3. Xóa học sinh                                    |");
+            System.out.println("4. Hiển thị toàn bộ học sinh                       |");
+            System.out.println("5. Tìm kiếm học sinh                               |");
+            System.out.println("6. Sắp xếp theo mã học sinh                        |");
             System.out.println("7. Sắp xếp theo điểm trung bình                    |");
-            System.out.println("8. Hiển thị nhưng học sinh được học bổng           |");
+            System.out.println("8. Hiển thị nhưng học sinh ĐTB >= 8.0              |");
             System.out.println("9. Đọc (Open)                                      |");
             System.out.println("10. Ghi (Save)                                     |");
             System.out.println("0. Trở về                                          |");
