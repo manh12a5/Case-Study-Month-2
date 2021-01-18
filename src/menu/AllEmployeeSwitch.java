@@ -1,10 +1,11 @@
-package transfer;
+package menu;
 
 import service.EmployeeManagement;
+import menu.IListSwitch;
 
 import java.util.Scanner;
 
-public class EmployeeListSwitch implements IListSwitch {
+public class AllEmployeeSwitch implements IListSwitch {
     Scanner scanner = new Scanner(System.in);
 
     public void listManagement() {

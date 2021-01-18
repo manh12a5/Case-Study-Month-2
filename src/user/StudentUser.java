@@ -1,15 +1,14 @@
-package menu;
+package user;
 
-import transfer.StudentListSwitch;
-import transfer.TeacherListSwitch;
+import menu.StudentInformationSwitch;
 
 import java.util.Scanner;
 
-public class StudentUser implements IDisPlayUser {
+public class StudentUser implements IDisplayUser {
     Scanner scanner = new Scanner(System.in);
 
     public void displayUser() {
-        StudentListSwitch studentListSwitch = new StudentListSwitch();
+        StudentInformationSwitch studentInformationSwitch = new StudentInformationSwitch();
 
         System.out.println("----------------------------------------------------");
         System.out.println("----|              STUDENT LOGIN               |----");
@@ -17,7 +16,7 @@ public class StudentUser implements IDisPlayUser {
         do {
             System.out.println("----------------------------------------------------");
             System.out.println("1. Thông tin học sinh                              |");
-            System.out.println("0. Exit                                            |");
+            System.out.println("0. Trở về                                          |");
             System.out.println("----------------------------------------------------");
             System.out.print("Choice number: ");
             choice = scanner.nextByte();
@@ -25,7 +24,7 @@ public class StudentUser implements IDisPlayUser {
             switch (choice) {
                 case 1:
                     //Thông tin sinh viên
-                    studentListSwitch.listManagement();
+                    studentInformationSwitch.listManagement();
                     break;
             }
         } while (choice != 0);

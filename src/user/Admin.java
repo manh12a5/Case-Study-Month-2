@@ -1,18 +1,18 @@
-package menu;
+package user;
 
-import transfer.EmployeeListSwitch;
-import transfer.StudentListSwitch;
-import transfer.TeacherListSwitch;
+import menu.AllEmployeeSwitch;
+import menu.AllStudentSwitch;
+import menu.AllTeacherSwitch;
 
 import java.util.Scanner;
 
-public class Admin implements IDisPlayUser {
+public class Admin implements IDisplayUser {
     Scanner scanner = new Scanner(System.in);
 
     public void displayUser() {
-        EmployeeListSwitch employeeListSwitch = new EmployeeListSwitch();
-        StudentListSwitch studentListSwitch = new StudentListSwitch();
-        TeacherListSwitch teacherListSwitch = new TeacherListSwitch();
+        AllEmployeeSwitch employeeAdminSwitch = new AllEmployeeSwitch();
+        AllStudentSwitch studentAdminSwitch = new AllStudentSwitch();
+        AllTeacherSwitch teacherAdminSwitch = new AllTeacherSwitch();
 
         System.out.println("----------------------------------------------------");
         System.out.println("----|               ADMIN LOGIN                |----");
@@ -22,7 +22,7 @@ public class Admin implements IDisPlayUser {
             System.out.println("1. Quản lý học sinh                                |");
             System.out.println("2. Quản lý giáo viên                               |");
             System.out.println("3. Quản lý nhân viên                               |");
-            System.out.println("0. Exit                                            |");
+            System.out.println("0. Trở về                                          |");
             System.out.println("----------------------------------------------------");
             System.out.print("Choice number: ");
             choice = scanner.nextByte();
@@ -30,19 +30,18 @@ public class Admin implements IDisPlayUser {
             switch (choice) {
                 case 1:
                     //Quản lý sinh viên
-                    studentListSwitch.listManagement();
+                    studentAdminSwitch.listManagement();
                     break;
                 case 2:
                     //Quản lý giáo viên
-                    teacherListSwitch.listManagement();
+                    teacherAdminSwitch.listManagement();
                     break;
                 case 3:
                     //Quản lý nhân viên
-                    employeeListSwitch.listManagement();
+                    employeeAdminSwitch.listManagement();
                     break;
             }
         } while (choice != 0);
-        System.out.println("----------");
     }
 
 }
