@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class Teacher extends PPerson implements Serializable, IPerson {
 
     //Danh sách thuộc tính
-    private String jobInSchool;
+    private String titleJob;
     private String classTeach;
     private double salaryInOneHour;
     private double hourTeachInMonth;
@@ -17,7 +17,7 @@ public class Teacher extends PPerson implements Serializable, IPerson {
     }
 
     public Teacher(String jobInSchool, String classTeach, double salaryInOneHour, double hourTeachInMonth) {
-        this.jobInSchool = jobInSchool;
+        this.titleJob = jobInSchool;
         this.classTeach = classTeach;
         this.salaryInOneHour = salaryInOneHour;
         this.hourTeachInMonth = hourTeachInMonth;
@@ -25,19 +25,19 @@ public class Teacher extends PPerson implements Serializable, IPerson {
 
     public Teacher(String numberID, String name, String gender, String birthday, String address, String numberPhone, String jobInSchool, String classTeach, double salaryInOneHour, double hourTeachInMonth) {
         super(numberID, name, gender, birthday, address, numberPhone);
-        this.jobInSchool = jobInSchool;
+        this.titleJob = jobInSchool;
         this.classTeach = classTeach;
         this.salaryInOneHour = salaryInOneHour;
         this.hourTeachInMonth = hourTeachInMonth;
     }
 
     //Getter and Setter
-    public String getJobInSchool() {
-        return jobInSchool;
+    public String getTitleJob() {
+        return titleJob;
     }
 
-    public void setJobInSchool(String jobInSchool) {
-        this.jobInSchool = jobInSchool;
+    public void setTitleJob(String titleJob) {
+        this.titleJob = titleJob;
     }
 
     public String getClassTeach() {
@@ -92,8 +92,8 @@ public class Teacher extends PPerson implements Serializable, IPerson {
         Scanner scanner1 = new Scanner(System.in);
         do {
             System.out.println("Nhập chức vụ giáo viên trong trường: ");
-            jobInSchool = scanner.nextLine();
-        } while (!checkJobInSchool(jobInSchool));
+            titleJob = scanner.nextLine();
+        } while (!checkJobInSchool(titleJob));
         do {
             System.out.println("Nhập lớp dạy: ");
             classTeach = scanner1.nextLine();
@@ -112,11 +112,10 @@ public class Teacher extends PPerson implements Serializable, IPerson {
 
     //Check chức vụ
     public boolean inputJobInSchool(String jobInSchool) {
-        if (jobInSchool.equalsIgnoreCase("Hiệu Trưởng") || (jobInSchool.equalsIgnoreCase("Hieu Truong")
-                || jobInSchool.equalsIgnoreCase("Phó Hiệu Trưởng") || jobInSchool.equalsIgnoreCase("Pho Hieu Truong")
-                || jobInSchool.equalsIgnoreCase("Trưởng Bộ Môn") || jobInSchool.equalsIgnoreCase("Truong Bo Mon")
-                || jobInSchool.equalsIgnoreCase("Trưởng Khoa") || jobInSchool.equalsIgnoreCase("Truong Khoa")
-                || jobInSchool.equalsIgnoreCase("Giáo Viên Giảng Dạy") || jobInSchool.equalsIgnoreCase("Giao Vien Giang Day"))) {
+        if (jobInSchool.equalsIgnoreCase("Giáo Sư Tiến Sĩ") || (jobInSchool.equalsIgnoreCase("Giao Su Tien Si")
+                || jobInSchool.equalsIgnoreCase("Phó Giáo Sư Tiến Sĩ") || jobInSchool.equalsIgnoreCase("Pho Giao Su Tien Si")
+                || jobInSchool.equalsIgnoreCase("Tiến Sĩ") || jobInSchool.equalsIgnoreCase("Tien Si")
+                || jobInSchool.equalsIgnoreCase("Thạc Sĩ") || jobInSchool.equalsIgnoreCase("Thac Si"))) {
             return true;
         } else {
             return false;
@@ -126,7 +125,7 @@ public class Teacher extends PPerson implements Serializable, IPerson {
     public boolean checkJobInSchool(String jobInSchool) {
         if (!inputJobInSchool(jobInSchool)) {
             System.err.println("Nhập sai chức vụ");
-            System.out.println("(Chức vụ đúng: Hiệu Trưởng, Phó Hiệu Trưởng, Trưởng Khoa, Trưởng Bộ Môn, Giáo Viên Giảng Dạy)");
+            System.out.println("(Chức vụ đúng: Giáo Sư Tiến Sĩ, Phó Giáo Sư Tiến Sĩ, Tiến Sĩ, Thạc Sĩ)");
             return false;
         } else {
             return true;
@@ -152,7 +151,7 @@ public class Teacher extends PPerson implements Serializable, IPerson {
         return super.toString() +
                 "-----{                TEACHER                 }-----" + "\n" +
                 "|                       [*]                        |" + "\n" +
-                "  - Chức vụ: " + jobInSchool + "\n" +
+                "  - Chức danh: " + titleJob + "\n" +
                 "  - Lớp dạy: " + classTeach + "\n" +
                 "  - Hệ số lương trong 1 giờ dạy: " + salaryInOneHour + "\n" +
                 "  - Số giờ dạy trong tháng: " + hourTeachInMonth + "\n" +
