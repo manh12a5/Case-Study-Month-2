@@ -93,7 +93,7 @@ public class Teacher extends PPerson implements Serializable, IPerson {
         do {
             System.out.println("Nhập chức danh giáo viên trong trường: ");
             titleJob = scanner.nextLine();
-        } while (!checkJobInSchool(titleJob));
+        } while (!checkTitleJob(titleJob));
         do {
             System.out.println("Nhập lớp dạy: ");
             classTeach = scanner1.nextLine();
@@ -111,7 +111,7 @@ public class Teacher extends PPerson implements Serializable, IPerson {
     //Check điều kiện nhập
 
     //Check chức danh
-    public boolean checkJobInSchool(String jobInSchool) {
+    public boolean checkTitleJob(String jobInSchool) {
         if (!jobInSchool.equalsIgnoreCase("Giáo Sư Tiến Sĩ") && !jobInSchool.equalsIgnoreCase("Giao Su Tien Si")
                 && !jobInSchool.equalsIgnoreCase("Phó Giáo Sư Tiến Sĩ") && !jobInSchool.equalsIgnoreCase("Pho Giao Su Tien Si")
                 && !jobInSchool.equalsIgnoreCase("Tiến Sĩ") && !jobInSchool.equalsIgnoreCase("Tien Si")
