@@ -24,7 +24,7 @@ public class StudentUser implements IDisplayUser {
             switch (choice) {
                 case 1:
                     //Thông tin sinh viên
-                    studentViewInfor.viewInformation();
+                    studentViewInfor.viewSwitch();
                     break;
             }
         } while (choice != 0);

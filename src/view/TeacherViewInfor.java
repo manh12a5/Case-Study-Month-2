@@ -1,6 +1,5 @@
 package view;
 
-import menu.IListSwitch;
 import service.TeacherManagement;
 
 import java.util.Scanner;
@@ -8,7 +7,7 @@ import java.util.Scanner;
 public class TeacherViewInfor implements IViewInformation {
     Scanner scanner = new Scanner(System.in);
 
-    public void viewInformation() {
+    public void viewSwitch() {
         TeacherManagement teacherManagement = new TeacherManagement();
         byte numberCase;
         do {

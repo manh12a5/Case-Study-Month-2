@@ -30,8 +30,8 @@ public class LoginAccount {
                 studentUser.displayUser();
                 break;
             default:
-                System.out.println("Nhập sai tài khoản");
-                System.out.println("Trở về trang chính");
+                System.out.println("  - Nhập sai tài khoản");
+                System.out.println("  - Trở về trang chính");
                 break;
         }
     }

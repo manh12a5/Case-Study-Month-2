@@ -35,7 +35,7 @@ public class TeacherManagement implements IManagement {
             }
         }
         if (!checkID) {
-            System.err.println("Không có mã giáo viên cần sửa");
+            System.out.println("  - Không có mã giáo viên cần sửa");
         }
     }
 
@@ -52,7 +52,7 @@ public class TeacherManagement implements IManagement {
             }
         }
         if (!checkID) {
-            System.err.println("Không có mã giáo viên để xóa");
+            System.out.println("  - Không có mã giáo viên để xóa");
         }
     }
 
@@ -78,7 +78,7 @@ public class TeacherManagement implements IManagement {
             }
         }
         if (count == 0) {
-            System.err.println("Không tìm thấy");
+            System.out.println("  - Không tìm thấy");
         }
     }
 
@@ -125,7 +125,7 @@ public class TeacherManagement implements IManagement {
             }
         }
         if (count == 0) {
-            System.err.println("Không tìm thấy");
+            System.out.println("  - Không tìm thấy");
         }
     }
 

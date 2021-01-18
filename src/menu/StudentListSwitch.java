@@ -5,7 +5,7 @@ import menu.IListSwitch;
 
 import java.util.Scanner;
 
-public class AllStudentSwitch implements IListSwitch {
+public class StudentListSwitch implements IListSwitch {
     Scanner scanner = new Scanner(System.in);
 
     public void listManagement() {

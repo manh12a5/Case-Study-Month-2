@@ -39,7 +39,7 @@ public class EmployeeManagement implements IManagement {
             }
         }
         if (!checkID) {
-            System.out.println("Không có mã nhân viên cần sửa");
+            System.out.println("  - Không có mã nhân viên cần sửa");
         }
     }
 
@@ -57,7 +57,7 @@ public class EmployeeManagement implements IManagement {
             }
         }
         if (!checkID) {
-            System.out.println("Không có mã nhân viên để xóa");
+            System.out.println("  - Không có mã nhân viên để xóa");
         }
     }
 
@@ -85,7 +85,7 @@ public class EmployeeManagement implements IManagement {
             }
         }
         if (count == 0) {
-            System.err.println("Không tìm thấy mã nhân viên");
+            System.err.println("  - Không tìm thấy mã nhân viên");
         }
     }
 

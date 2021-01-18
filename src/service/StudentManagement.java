@@ -34,7 +34,7 @@ public class StudentManagement implements IManagement {
             }
         }
         if (!checkID) {
-            System.err.println("Không có mã học sinh cần sửa");
+            System.out.println("  - Không có mã học sinh cần sửa");
         }
     }
 
@@ -52,7 +52,7 @@ public class StudentManagement implements IManagement {
             }
         }
         if (!checkID) {
-            System.err.println("Không có mã sinh viên để xóa");
+            System.out.println("  - Không có mã sinh viên để xóa");
         }
     }
 
@@ -78,7 +78,7 @@ public class StudentManagement implements IManagement {
             }
         }
         if (count == 0) {
-            System.out.println("Không tim thấy");
+            System.out.println("  - Không tim thấy");
         }
     }
 

@@ -1,8 +1,8 @@
 package user;
 
-import menu.AllEmployeeSwitch;
-import menu.AllStudentSwitch;
-import menu.AllTeacherSwitch;
+import menu.EmployeeListSwitch;
+import menu.StudentListSwitch;
+import menu.TeacherListSwitch;
 
 import java.util.Scanner;
 
@@ -10,9 +10,9 @@ public class Admin implements IDisplayUser {
     Scanner scanner = new Scanner(System.in);
 
     public void displayUser() {
-        AllEmployeeSwitch employeeAdminSwitch = new AllEmployeeSwitch();
-        AllStudentSwitch studentAdminSwitch = new AllStudentSwitch();
-        AllTeacherSwitch teacherAdminSwitch = new AllTeacherSwitch();
+        EmployeeListSwitch employeeAdminSwitch = new EmployeeListSwitch();
+        StudentListSwitch studentAdminSwitch = new StudentListSwitch();
+        TeacherListSwitch teacherAdminSwitch = new TeacherListSwitch();
 
         System.out.println("----------------------------------------------------");
         System.out.println("----|               ADMIN LOGIN                |----");
