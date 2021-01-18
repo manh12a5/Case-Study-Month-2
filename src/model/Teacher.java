@@ -91,7 +91,7 @@ public class Teacher extends PPerson implements Serializable, IPerson {
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
         do {
-            System.out.println("Nhập chức vụ giáo viên trong trường: ");
+            System.out.println("Nhập chức danh giáo viên trong trường: ");
             titleJob = scanner.nextLine();
         } while (!checkJobInSchool(titleJob));
         do {
@@ -110,20 +110,12 @@ public class Teacher extends PPerson implements Serializable, IPerson {
 
     //Check điều kiện nhập
 
-    //Check chức vụ
-    public boolean inputJobInSchool(String jobInSchool) {
-        if (jobInSchool.equalsIgnoreCase("Giáo Sư Tiến Sĩ") || (jobInSchool.equalsIgnoreCase("Giao Su Tien Si")
-                || jobInSchool.equalsIgnoreCase("Phó Giáo Sư Tiến Sĩ") || jobInSchool.equalsIgnoreCase("Pho Giao Su Tien Si")
-                || jobInSchool.equalsIgnoreCase("Tiến Sĩ") || jobInSchool.equalsIgnoreCase("Tien Si")
-                || jobInSchool.equalsIgnoreCase("Thạc Sĩ") || jobInSchool.equalsIgnoreCase("Thac Si"))) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
+    //Check chức danh
     public boolean checkJobInSchool(String jobInSchool) {
-        if (!inputJobInSchool(jobInSchool)) {
+        if (!jobInSchool.equalsIgnoreCase("Giáo Sư Tiến Sĩ") && !jobInSchool.equalsIgnoreCase("Giao Su Tien Si")
+                && !jobInSchool.equalsIgnoreCase("Phó Giáo Sư Tiến Sĩ") && !jobInSchool.equalsIgnoreCase("Pho Giao Su Tien Si")
+                && !jobInSchool.equalsIgnoreCase("Tiến Sĩ") && !jobInSchool.equalsIgnoreCase("Tien Si")
+                && !jobInSchool.equalsIgnoreCase("Thạc Sĩ") && !jobInSchool.equalsIgnoreCase("Thac Si")) {
             System.err.println("Nhập sai chức vụ");
             System.out.println("(Chức vụ đúng: Giáo Sư Tiến Sĩ, Phó Giáo Sư Tiến Sĩ, Tiến Sĩ, Thạc Sĩ)");
             return false;
