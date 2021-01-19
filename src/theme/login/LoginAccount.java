@@ -1,6 +1,7 @@
 package theme.login;
 
 import theme.user.Admin;
+import theme.user.EmployeeUser;
 import theme.user.StudentUser;
 import theme.user.TeacherUser;
 
@@ -14,6 +15,7 @@ public class LoginAccount {
         Admin admin = new Admin();
         StudentUser studentUser = new StudentUser();
         TeacherUser teacherUser = new TeacherUser();
+        EmployeeUser employeeUser = new EmployeeUser();
 
         String loginUser;
         System.out.print("Nhập tên tài khoản: ");
@@ -29,6 +31,8 @@ public class LoginAccount {
             case "student":
                 studentUser.userSwitch();
                 break;
+            case "employee":
+                employeeUser.userSwitch();
             default:
                 System.out.println("  - Nhập sai tài khoản");
                 System.out.println("  - Trở về trang chính");

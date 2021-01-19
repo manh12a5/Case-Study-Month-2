@@ -4,10 +4,10 @@ import service.TeacherService;
 
 import java.util.Scanner;
 
-public class TeacherView implements IViewSwitch {
+public class TeacherInformation implements IInformationSwtich {
     Scanner scanner = new Scanner(System.in);
 
-    public void viewSwitch() {
+    public void informationSwitch() {
         TeacherService teacherService = new TeacherService();
         byte numberCase;
         do {

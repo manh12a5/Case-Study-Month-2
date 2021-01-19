@@ -85,7 +85,7 @@ public class EmployeeService implements IService {
             }
         }
         if (count == 0) {
-            System.err.println("  - Không tìm thấy mã nhân viên");
+            System.out.println("  - Không tìm thấy mã nhân viên");
         }
     }
 

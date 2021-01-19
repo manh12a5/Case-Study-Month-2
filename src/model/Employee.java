@@ -124,7 +124,7 @@ public class Employee extends PPerson implements Serializable, IPerson {
 
     //Check điều kiện nhập
 
-    //Check nghê nghiệp
+    //Check nghề nghiệp
     public boolean checkJob(String job) {
         for (int i = 0; i < job.length(); i++) {
             if (!job.equalsIgnoreCase("Bảo Vệ") && !job.equalsIgnoreCase("Bao Ve")

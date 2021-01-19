@@ -1,7 +1,7 @@
 package theme.user;
 
 import theme.manage.StudentManage;
-import theme.information.TeacherView;
+import theme.information.TeacherInformation;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class TeacherUser implements IUserSwitch {
 
     public void userSwitch() {
         StudentManage studentList = new StudentManage();
-        TeacherView teacherView = new TeacherView();
+        TeacherInformation teacherView = new TeacherInformation();
 
         System.out.println("----------------------------------------------------");
         System.out.println("----|              TEACHER LOGIN               |----");
@@ -31,7 +31,7 @@ public class TeacherUser implements IUserSwitch {
                     break;
                 case 2:
                     //Thông tin giáo viên
-                    teacherView.viewSwitch();
+                    teacherView.informationSwitch();
                     break;
             }
         } while (choice != 0);
