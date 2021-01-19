@@ -17,7 +17,7 @@ public class Admin implements IUserSwitch {
         byte choice;
         do {
             System.out.println("----------------------------------------------------");
-            System.out.println("----|               ADMIN LOGIN                |----");
+            System.out.println("----|                  ADMIN                   |----");
             System.out.println("----------------------------------------------------");
             System.out.println("1. Quản lý học sinh                                |");
             System.out.println("2. Quản lý giáo viên                               |");

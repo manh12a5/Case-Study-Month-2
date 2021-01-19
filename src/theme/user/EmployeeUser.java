@@ -14,7 +14,7 @@ public class EmployeeUser implements IUserSwitch {
         byte choice;
         do {
             System.out.println("----------------------------------------------------");
-            System.out.println("----|              EMPLOYEE LOGIN              |----");
+            System.out.println("----|              EMPLOYEE USER               |----");
             System.out.println("----------------------------------------------------");
             System.out.println("1. Thông tin nhân viên                             |");
             System.out.println("0. Trở về                                          |");

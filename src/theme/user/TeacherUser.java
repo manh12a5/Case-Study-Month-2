@@ -15,7 +15,7 @@ public class TeacherUser implements IUserSwitch {
         byte choice;
         do {
             System.out.println("----------------------------------------------------");
-            System.out.println("----|              TEACHER LOGIN               |----");
+            System.out.println("----|              TEACHER USER                |----");
             System.out.println("----------------------------------------------------");
             System.out.println("1. Quản lý học sinh                                |");
             System.out.println("2. Thông tin giáo viên                             |");

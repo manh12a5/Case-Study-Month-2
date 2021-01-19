@@ -13,7 +13,7 @@ public class StudentUser implements IUserSwitch {
         byte choice;
         do {
             System.out.println("----------------------------------------------------");
-            System.out.println("----|              STUDENT LOGIN               |----");
+            System.out.println("----|              STUDENT USER                |----");
             System.out.println("----------------------------------------------------");
             System.out.println("1. Thông tin học sinh                              |");
             System.out.println("0. Trở về                                          |");
