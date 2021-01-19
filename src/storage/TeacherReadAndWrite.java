@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TeacherReadAndWrite {
+
     Scanner scanner = new Scanner(System.in);
 
     public void readFileTeacher(List<Teacher> arrTeacher) {

@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class EmployeeReadAndWrite {
+
     Scanner scanner = new Scanner(System.in);
 
     public void readFileEmployee(Map<String, Employee> arrEmployees) {
