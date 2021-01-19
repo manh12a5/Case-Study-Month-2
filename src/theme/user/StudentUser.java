@@ -10,10 +10,10 @@ public class StudentUser implements IUserSwitch {
     public void userSwitch() {
         StudentInformation studentView = new StudentInformation();
 
-        System.out.println("----------------------------------------------------");
-        System.out.println("----|              STUDENT LOGIN               |----");
         byte choice;
         do {
+            System.out.println("----------------------------------------------------");
+            System.out.println("----|              STUDENT LOGIN               |----");
             System.out.println("----------------------------------------------------");
             System.out.println("1. Thông tin học sinh                              |");
             System.out.println("0. Trở về                                          |");

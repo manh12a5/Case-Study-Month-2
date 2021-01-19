@@ -12,10 +12,10 @@ public class TeacherUser implements IUserSwitch {
         StudentManage studentList = new StudentManage();
         TeacherInformation teacherView = new TeacherInformation();
 
-        System.out.println("----------------------------------------------------");
-        System.out.println("----|              TEACHER LOGIN               |----");
         byte choice;
         do {
+            System.out.println("----------------------------------------------------");
+            System.out.println("----|              TEACHER LOGIN               |----");
             System.out.println("----------------------------------------------------");
             System.out.println("1. Quản lý học sinh                                |");
             System.out.println("2. Thông tin giáo viên                             |");

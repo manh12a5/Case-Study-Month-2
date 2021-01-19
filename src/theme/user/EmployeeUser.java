@@ -11,10 +11,10 @@ public class EmployeeUser implements IUserSwitch {
     public void userSwitch() {
         EmployeeInformation employeeInformation = new EmployeeInformation();
 
-        System.out.println("----------------------------------------------------");
-        System.out.println("----|              EMPLOYEE LOGIN              |----");
         byte choice;
         do {
+            System.out.println("----------------------------------------------------");
+            System.out.println("----|              EMPLOYEE LOGIN              |----");
             System.out.println("----------------------------------------------------");
             System.out.println("1. Thông tin nhân viên                             |");
             System.out.println("0. Trở về                                          |");
