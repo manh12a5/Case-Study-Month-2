@@ -1,4 +1,4 @@
-package account.view;
+package theme.information;
 
 public class EmployeeView {
 }

@@ -1,23 +1,22 @@
-package account.view;
+package theme.information;
 
-import service.TeacherService;
+import service.StudentService;
 
 import java.util.Scanner;
 
-public class TeacherView implements IViewSwitch {
+public class StudentView implements IViewSwitch {
     Scanner scanner = new Scanner(System.in);
 
     public void viewSwitch() {
-        TeacherService teacherService = new TeacherService();
+        StudentService studentService = new StudentService();
         byte numberCase;
         do {
             System.out.println("----------------------------------------------------");
-            System.out.println("----{           Thông tin Giáo Viên            }----");
+            System.out.println("----{            Thông tin Học Sinh            }----");
             System.out.println("----------------------------------------------------");
-            System.out.println("1. Hiển thị toàn bộ giáo viên                      |");
-            System.out.println("2. Tìm kiếm giáo viên                              |");
-            System.out.println("3. Sắp xếp giáo viên theo mã giáo viên             |");
-            System.out.println("4. Tổng tiền của một giáo viên                     |");
+            System.out.println("1. Hiển thị toàn bộ học sinh                       |");
+            System.out.println("2. Tìm kiếm học sinh                               |");
+            System.out.println("3. Sắp xếp theo mã học sinh                        |");
             System.out.println("                                                   |");
             System.out.println("9. Đọc (Open)                                      |");
             System.out.println("10. Ghi (Save)                                     |");
@@ -29,32 +28,27 @@ public class TeacherView implements IViewSwitch {
             switch (numberCase) {
                 case 1:
                     //Hiển thị toàn bộ
-                    teacherService.displayAll();
+                    studentService.displayAll();
                     break;
                 case 2:
                     //Tìm kiếm
-                    teacherService.searchPerson();
+                    studentService.searchPerson();
                     break;
                 case 3:
-                    //Sắp xếp
-                    teacherService.sortNumberID();
-                    break;
-                case 4:
-                    //Tính tổng tiền
-                    teacherService.totalSalaryTeacher();
+                    //Sắp xếp theo mã sinh viên
+                    studentService.sortNumberID();
                     break;
                 case 9:
-                    //Đọc
-                    teacherService.readFilePerson();
+                    //Đọc (Open)
+                    studentService.readFilePerson();
                     break;
                 case 10:
-                    //Ghi
-                    teacherService.writeFilePerson();
+                    //Ghi (Save)
+                    studentService.writeFilePerson();
                     break;
             }
         } while (numberCase != 0);
         System.out.println("----------");
     }
-
 
 }

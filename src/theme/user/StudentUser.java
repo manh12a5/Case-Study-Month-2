@@ -1,6 +1,6 @@
-package account.user;
+package theme.user;
 
-import account.view.StudentView;
+import theme.information.StudentView;
 
 import java.util.Scanner;
 

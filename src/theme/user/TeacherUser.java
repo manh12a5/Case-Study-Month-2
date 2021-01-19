@@ -1,27 +1,24 @@
-package account.user;
+package theme.user;
 
-import account.manage.EmployeeManage;
-import account.manage.StudentManage;
-import account.manage.TeacherManage;
+import theme.manage.StudentManage;
+import theme.information.TeacherView;
 
 import java.util.Scanner;
 
-public class Admin implements IUserSwitch {
+public class TeacherUser implements IUserSwitch {
     Scanner scanner = new Scanner(System.in);
 
     public void userSwitch() {
-        EmployeeManage employeeAdminSwitch = new EmployeeManage();
-        StudentManage studentAdminSwitch = new StudentManage();
-        TeacherManage teacherAdminSwitch = new TeacherManage();
+        StudentManage studentList = new StudentManage();
+        TeacherView teacherView = new TeacherView();
 
         System.out.println("----------------------------------------------------");
-        System.out.println("----|               ADMIN LOGIN                |----");
+        System.out.println("----|              TEACHER LOGIN               |----");
         byte choice;
         do {
             System.out.println("----------------------------------------------------");
             System.out.println("1. Quản lý học sinh                                |");
-            System.out.println("2. Quản lý giáo viên                               |");
-            System.out.println("3. Quản lý nhân viên                               |");
+            System.out.println("2. Thông tin giáo viên                             |");
             System.out.println("0. Trở về                                          |");
             System.out.println("----------------------------------------------------");
             System.out.print("Choice number: ");
@@ -30,18 +27,15 @@ public class Admin implements IUserSwitch {
             switch (choice) {
                 case 1:
                     //Quản lý sinh viên
-                    studentAdminSwitch.manageSwitch();
+                    studentList.manageSwitch();
                     break;
                 case 2:
-                    //Quản lý giáo viên
-                    teacherAdminSwitch.manageSwitch();
-                    break;
-                case 3:
-                    //Quản lý nhân viên
-                    employeeAdminSwitch.manageSwitch();
+                    //Thông tin giáo viên
+                    teacherView.viewSwitch();
                     break;
             }
         } while (choice != 0);
+        System.out.println("----------");
     }
 
 }
